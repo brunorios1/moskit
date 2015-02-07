@@ -8,7 +8,9 @@ var paths = {
 // Styles
 gulp.task('styles', function () {
   gulp.src('src/scss/style.scss')
-    .pipe(sass())
+    .pipe(sass({
+      errLogToConsole: true
+    }))
     .pipe(gulp.dest('.tmp/css'));
 });
 
