@@ -2,13 +2,12 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 
 var paths = {
-  sass: ['src/scss/**/*.scss']
-  // images: 'client/img/**/*'
+  sass: 'src/scss/**/*.scss'
 };
 
 // Styles
 gulp.task('styles', function () {
-  gulp.src(paths.sass)
+  gulp.src('src/scss/style.scss')
     .pipe(sass())
     .pipe(gulp.dest('.tmp/css'));
 });
