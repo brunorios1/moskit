@@ -13,13 +13,15 @@ sudo apt-get install -y nodejs
 
 ### Gulp (http://www.gulpjs.com)
 
+Ubuntu:
 ```sh
 $ sudo npm install --global gulp
 ```
 
 ### Bundler (http://bundler.io/)
 
-  ```sh
+Ubuntu:
+```sh
 $ sudo apt-get install bundler
 ```
 
