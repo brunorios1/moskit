@@ -9,6 +9,7 @@ var paths = {
 gulp.task('styles', function () {
   gulp.src('src/scss/style.scss')
     .pipe(sass({
+      // "keep gulp from stopping every time you mess up your sass"
       errLogToConsole: true
     }))
     .pipe(gulp.dest('.tmp/css'));
