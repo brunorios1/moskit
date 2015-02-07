@@ -2,6 +2,7 @@
   "name": "moskit",
   "version": "1.0.0",
   "description": "A modern front-end starter kit",
+  "author": "Bruno Rios <brunorios1@gmail.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/brunorios1/moskit.git"
