@@ -2,7 +2,7 @@
 
 A modern front-end starter kit
 
-## Prerequisites:
+## Prerequisites
 
 ### Node.js (http://nodejs.org/download/)
 

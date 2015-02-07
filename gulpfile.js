@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
 
 var paths = {
   styles: 'src/scss/**/*.scss'
@@ -8,9 +9,14 @@ var paths = {
 // Styles
 gulp.task('styles', function () {
   gulp.src('src/scss/style.scss')
+    // compile .scss to .css
     .pipe(sass({
       // "keep gulp from stopping every time you mess up your sass"
       errLogToConsole: true
+    }))
+    // "add vendor prefixes using values from Can I Use (caniuse.com)"
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions']
     }))
     .pipe(gulp.dest('.tmp/css'));
 });
