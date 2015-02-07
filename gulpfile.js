@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 
 var paths = {
-  sass: 'src/scss/**/*.scss'
+  styles: 'src/scss/**/*.scss'
 };
 
 // Styles
@@ -17,7 +17,7 @@ gulp.task('styles', function () {
 
 // Rerun the task when a file changes
 gulp.task('watch', function() {
-  gulp.watch(paths.sass, ['styles']);
+  gulp.watch(paths.styles, ['styles']);
 });
 
 // The default task (called when you run `gulp` from cli)
