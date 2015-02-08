@@ -24,8 +24,8 @@ gulp.task('styles', function () {
     .pipe(combineMq())
     // Optimize CSS
     .pipe(csso())
-    // Destination folder
-    .pipe(gulp.dest('.tmp/css'));
+    // Compiles to build folder
+    .pipe(gulp.dest('dist/css'))
 });
 
 // Rerun the task when a file changes
