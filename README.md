@@ -36,7 +36,7 @@ $ bundle install
 
 ## Commands
 
-### Watch for changes and compile Sass
+### Watch for changes, lint, compile, optimize...
 ```sh
 $ gulp watch
 ```
