@@ -2,6 +2,8 @@ var gulp = require('gulp');
 var changed = require('gulp-changed');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
+var combineMq = require('gulp-combine-mq');
+var csso = require('gulp-csso');
 
 var paths = {
   styles: 'src/scss/**/*.scss'
@@ -21,6 +23,11 @@ gulp.task('styles', function () {
     .pipe(autoprefixer({
       browsers: ['last 2 versions']
     }))
+    // Combine Media Queries
+    .pipe(combineMq())
+    // Optimize CSS
+    .pipe(csso())
+    // Destination folder
     .pipe(gulp.dest('.tmp/css'));
 });
 
