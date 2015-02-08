@@ -16,6 +16,7 @@
     "npm": ">=1.4.28"
   },
   "devDependencies": {
+    "del": "^1.1.1",
     "gulp": "^3.8.10",
     "gulp-autoprefixer": "^2.1.0",
     "gulp-combine-mq": "^0.3.1",

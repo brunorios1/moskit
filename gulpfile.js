@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var del = require('del');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var combineMq = require('gulp-combine-mq');
@@ -8,8 +9,12 @@ var paths = {
   styles: 'src/scss/**/*.scss'
 };
 
+gulp.task('clean', function(cb) {
+  del(['dist/*'], cb);
+});
+
 // Styles
-gulp.task('styles', function () {
+gulp.task('styles', ['clean'], function () {
   gulp.src('src/scss/style.scss')
     // compile .scss to .css
     .pipe(sass({
