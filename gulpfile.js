@@ -47,9 +47,9 @@ gulp.task('scripts', ['clean'], function() {
 });
 
 // Rerun the task when a file changes
-gulp.task('watch', function() {
-  gulp.watch(paths.styles, ['styles']);
+gulp.task('watch', ['styles', 'scripts'], function() {
+  gulp.watch(paths.styles, ['styles', 'scripts']);
 });
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['watch']);
+gulp.task('default', ['styles', 'scripts']);

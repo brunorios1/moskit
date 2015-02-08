@@ -40,3 +40,8 @@ $ bundle install
 ```sh
 $ gulp watch
 ```
+
+### Build
+```sh
+$ gulp
+```
