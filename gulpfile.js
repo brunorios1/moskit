@@ -12,8 +12,6 @@ var paths = {
 // Styles
 gulp.task('styles', function () {
   gulp.src('src/scss/style.scss')
-    // No more wasting precious time on processing unchanged files.
-    .pipe(changed('.tmp/css', {extension: '.css'}))
     // compile .scss to .css
     .pipe(sass({
       // "keep gulp from stopping every time you mess up your sass"
