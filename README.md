@@ -1,5 +1,7 @@
 # moskit
 
+[![devDependency Status](https://img.shields.io/david/dev/brunorios1/moskit.svg?style=flat)](https://david-dm.org/brunorios1/moskit#info=devDependencies)
+
 A modern front-end starter kit
 
 ## Prerequisites
