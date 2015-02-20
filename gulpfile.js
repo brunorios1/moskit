@@ -6,6 +6,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var combineMq = require('gulp-combine-mq');
 var csso = require('gulp-csso');
 var eslint = require('gulp-eslint');
+var uglify = require('gulp-uglify');
 
 var paths = {
   styles: 'src/scss/**/*.scss',
@@ -34,7 +35,7 @@ gulp.task('styles', ['clean'], function() {
     }))
     // Combine Media Queries
     .pipe(combineMq())
-    // Optimize CSS
+    // Optimize and minify CSS
     .pipe(csso())
     // Compiles to build folder
     .pipe(gulp.dest('dist/css'));
@@ -48,6 +49,8 @@ gulp.task('scripts', ['clean'], function() {
       .pipe(eslint())
       .pipe(eslint.format())
       // .pipe(eslint.failOnError())
+      // Minify JS
+      .pipe(uglify())
       // Compiles to build folder
       .pipe(gulp.dest('dist/js'));
 });

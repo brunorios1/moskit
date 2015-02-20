@@ -8,6 +8,7 @@ A modern front-end starter kit
 
 ### Node.js (http://nodejs.org/download/)
 
+Ubuntu:
 ```sh
 curl -sL https://deb.nodesource.com/setup | sudo bash -
 sudo apt-get install -y nodejs
