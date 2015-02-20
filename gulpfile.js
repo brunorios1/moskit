@@ -7,7 +7,8 @@ var csso = require('gulp-csso');
 var eslint = require('gulp-eslint');
 
 var paths = {
-  styles: 'src/scss/**/*.scss'
+  styles: 'src/scss/**/*.scss',
+  scripts: 'src/js/**/*.js',
 };
 
 gulp.task('clean', function(cb) {
@@ -38,17 +39,18 @@ gulp.task('styles', ['clean'], function() {
 gulp.task('scripts', ['clean'], function() {
     // Note: To have the process exit with an error code (1) on
     //  lint error, return the stream and pipe to failOnError last.
-    gulp.src(['src/js/**/*.js'])
+    gulp.src([paths.scripts])
       .pipe(eslint())
       .pipe(eslint.format())
-      .pipe(eslint.failOnError())
+      // .pipe(eslint.failOnError())
       // Compiles to build folder
       .pipe(gulp.dest('dist/js'));
 });
 
 // Rerun the task when a file changes
 gulp.task('watch', ['styles', 'scripts'], function() {
-  gulp.watch(paths.styles, ['styles', 'scripts']);
+  gulp.watch(paths.styles, ['styles']);
+  gulp.watch(paths.scripts, ['scripts']);
 });
 
 // The default task (called when you run `gulp` from cli)
