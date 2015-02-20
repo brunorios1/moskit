@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var del = require('del');
+var scsslint = require('gulp-scss-lint');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var combineMq = require('gulp-combine-mq');
@@ -17,7 +18,11 @@ gulp.task('clean', function(cb) {
 
 // Styles
 gulp.task('styles', ['clean'], function() {
-  gulp.src('src/scss/style.scss')
+  gulp.src(paths.styles)
+    // lint scss code
+    .pipe(scsslint({
+      'bundleExec': true
+    }))
     // compile .scss to .css
     .pipe(sass({
       // "keep gulp from stopping every time you mess up your sass"
@@ -47,7 +52,7 @@ gulp.task('scripts', ['clean'], function() {
       .pipe(gulp.dest('dist/js'));
 });
 
-// Rerun the task when a file changes
+// Check for changes and rerun tasks when a file changes
 gulp.task('watch', ['styles', 'scripts'], function() {
   gulp.watch(paths.styles, ['styles']);
   gulp.watch(paths.scripts, ['scripts']);
