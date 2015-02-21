@@ -1,0 +1,6 @@
+# Scss-Lint configuration overrides
+# https://github.com/causes/scss-lint
+
+linters:
+  PropertySortOrder:
+    order: concentric
