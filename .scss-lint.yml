@@ -3,4 +3,4 @@
 
 linters:
   PropertySortOrder:
-    order: concentric
+    order: smacss
