@@ -1,11 +1,8 @@
-// Settings
-@import 'settings/variables';
-@import 'settings/functions';
-@import 'settings/mixins';
-
 // Base
-@import 'base/elements';
+@import 'base/base';
 
 // Layout
+// @import 'base/layout/layout';
 
-// Components
+// Modules
+// @import 'base/modules/modules';
