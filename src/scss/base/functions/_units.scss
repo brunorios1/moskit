@@ -1,0 +1,12 @@
+// Strips units
+@function strip($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+// Converts px to rem or em
+@function u($target, $unit: rem) {
+  $target: strip($target);
+  $html-font-size: strip($html-font-size);
+
+  @return ($target / $html-font-size) + $unit;
+}
