@@ -2,8 +2,7 @@ var gulp = require('gulp');
 var del = require('del');
 var scsslint = require('gulp-scss-lint');
 var sass = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
-var combineMq = require('gulp-combine-mq');
+var please = require('gulp-pleeease');
 var csso = require('gulp-csso');
 var eslint = require('gulp-eslint');
 var uglify = require('gulp-uglify');
@@ -29,12 +28,11 @@ gulp.task('styles', ['clean'], function() {
       // "keep gulp from stopping every time you mess up your sass"
       errLogToConsole: true
     }))
-    // "add vendor prefixes using values from Can I Use (caniuse.com)"
-    .pipe(autoprefixer({
-      browsers: ['last 2 versions']
+    .pipe(please({
+      "autoprefixer": { "browsers": ["last 2 versions"] },
+      "mqpacker": true,
+      "minifier": false
     }))
-    // Combine Media Queries
-    .pipe(combineMq())
     // Optimize and minify CSS
     .pipe(csso())
     // Compiles to build folder
