@@ -30,11 +30,8 @@ gulp.task('styles', ['clean'], function() {
     }))
     .pipe(please({
       "autoprefixer": { "browsers": ["last 2 versions"] },
-      "mqpacker": true,
-      "minifier": false
+      "mqpacker": true
     }))
-    // Optimize and minify CSS
-    .pipe(csso())
     // Compiles to build folder
     .pipe(gulp.dest('dist/css'));
 });
