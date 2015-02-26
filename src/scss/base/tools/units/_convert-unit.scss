@@ -1,0 +1,17 @@
+// Converts "px" to "rem" or "em"
+@function unit($target, $unit: $unit-default) {
+  $target: strip-unit($target);
+  $font-size-root: strip-unit($font-size-root);
+
+  @return ($target / $font-size-root)+$unit;
+}
+
+// "rem" alias for the "unit" function
+@function rem($target, $unit: $unit-default) {
+  @return unit($target, $unit: rem);
+}
+
+// "em" alias for the "unit" function
+@function em($target, $unit: $unit-default) {
+  @return unit($target, $unit: em);
+}
