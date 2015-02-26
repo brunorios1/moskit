@@ -1,0 +1,11 @@
+// Mixins
+
+@mixin grid-column($columns: 1) {
+  width: percentage($columns/$grid-columns);
+}
+
+@mixin grid-column-classes() {
+  @for $i from 1 through $grid-columns {
+    .grid-#{$i} { @include grid-column($columns:$i); }
+  }
+}
