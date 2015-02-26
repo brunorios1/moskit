@@ -1,0 +1,5 @@
+// Clearfix
+// http://nicolasgallagher.com/micro-clearfix-hack/
+.clearfix {
+  @include clearfix();
+}
