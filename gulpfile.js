@@ -3,7 +3,6 @@ var del = require('del');
 var scsslint = require('gulp-scss-lint');
 var sass = require('gulp-sass');
 var please = require('gulp-pleeease');
-var csso = require('gulp-csso');
 var eslint = require('gulp-eslint');
 var uglify = require('gulp-uglify');
 
