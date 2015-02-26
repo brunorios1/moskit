@@ -1,0 +1,20 @@
+@mixin media-query($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+// aliases
+
+// medium
+@mixin medium() {
+  @include media-query($breakpoint-medium) {
+    @content;
+  }
+}
+
+@mixin large() {
+  @include media-query($breakpoint-medium) {
+    @content;
+  }
+}

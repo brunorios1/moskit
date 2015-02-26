@@ -1,0 +1,9 @@
+// Converts tracking to em
+
+// Usage:
+// p { letter-spacing: ls(-50); }
+
+@function ls($target) {
+  $tracking: $target / 1000;
+  @return $tracking+em;
+}

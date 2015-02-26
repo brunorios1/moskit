@@ -1,121 +1,38 @@
 // Elements
-// https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+// MDN Reference: https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+
 // Basic
-@import 'basic/html/html';
+@import 'basic/all';
+
+// Global
+@import 'global';
 
 // Content sectioning
-// @import 'sectioning/address/address';
-// @import 'sectioning/article/article';
-// @import 'sectioning/body/body';
-// @import 'sectioning/footer/footer';
-// @import 'sectioning/header/header';
-// @import 'sectioning/heading/heading';
-// @import 'sectioning/nav/nav';
-// @import 'sectioning/section/section';
+@import 'sectioning/all';
 
 // Text content
-// @import 'text/blockquote/blockquote';
-// @import 'text/dd/dd';
-// @import 'text/div/div';
-// @import 'text/dl/dl';
-// @import 'text/dt/dt';
-// @import 'text/figcaption/figcaption';
-// @import 'text/figure/figure';
-// @import 'text/hr/hr';
-// @import 'text/li/li';
-// @import 'text/main/main';
-// @import 'text/ol/ol';
-// @import 'text/p/p';
-// @import 'text/pre/pre';
-// @import 'text/ul/ul';
+@import 'text/all';
 
 // Inline text semantics
-// @import 'text-inline/a/a';
-// @import 'text-inline/abbr/abbr';
-// @import 'text-inline/b/b';
-// @import 'text-inline/bdi/bdi';
-// @import 'text-inline/bdo/bdo';
-// @import 'text-inline/br/br';
-// @import 'text-inline/cite/cite';
-// @import 'text-inline/code/code';
-// @import 'text-inline/data/data';
-// @import 'text-inline/dfn/dfn';
-// @import 'text-inline/em/em';
-// @import 'text-inline/i/i';
-// @import 'text-inline/kbd/kbd';
-// @import 'text-inline/mark/mark';
-// @import 'text-inline/q/q';
-// @import 'text-inline/rp/rp';
-// @import 'text-inline/rt/rt';
-// @import 'text-inline/ruby/ruby';
-// @import 'text-inline/s/s';
-// @import 'text-inline/samp/samp';
-// @import 'text-inline/small/small';
-// @import 'text-inline/span/span';
-// @import 'text-inline/strong/strong';
-// @import 'text-inline/sub/sub';
-// @import 'text-inline/sup/sup';
-// @import 'text-inline/time/time';
-// @import 'text-inline/u/u';
-// @import 'text-inline/var/var';
-// @import 'text-inline/wbr/wbr';
+// @import 'inline-text/all';
 
 // Image & multimedia
-// @import 'media/area/area';
-// @import 'media/audio/audio';
-// @import 'media/img/img';
-// @import 'media/map/map';
-// @import 'media/track/track';
-// @import 'media/video/video';
+@import 'media/all';
 
-// embedded content
-// @import 'embedded/embed/embed';
-// @import 'embedded/iframe/iframe';
-// @import 'embedded/object/object';
-// @import 'embedded/param/param';
-// @import 'embedded/source/source';
+// Embedded content
+// @import 'embedded/all';
 
 // Scripting
-// @import 'scripting/canvas/canvas';
-// @import 'scripting/noscript/noscript';
-// @import 'scripting/script/script';
+// @import 'scripting/all';
 
 // Edits
-// @import 'edits/del/del';
-// @import 'edits/ins/ins';
+// @import 'edits/all';
 
 // Table content
-// @import 'table/caption/caption';
-// @import 'table/col/col';
-// @import 'table/colgroup/colgroup';
-// @import 'table/table/table';
-// @import 'table/tbody/tbody';
-// @import 'table/td/td';
-// @import 'table/tfoot/tfoot';
-// @import 'table/th/th';
-// @import 'table/thead/thead';
-// @import 'table/tr/tr';
+// @import 'table/all';
 
 // Forms
-// @import 'forms/button/button';
-// @import 'forms/datalist/datalist';
-// @import 'forms/fieldset/fieldset';
-// @import 'forms/form/form';
-// @import 'forms/input/input';
-// @import 'forms/keygen/keygen';
-// @import 'forms/label/label';
-// @import 'forms/legend/legend';
-// @import 'forms/meter/meter';
-// @import 'forms/optgroup/optgroup';
-// @import 'forms/option/option';
-// @import 'forms/output/output';
-// @import 'forms/progress/progress';
-// @import 'forms/select/select';
-// @import 'forms/textarea/textarea';
+// @import 'forms/all';
 
 // Interactive elements
-// @import 'interactive/details/details';
-// @import 'interactive/dialog/dialog';
-// @import 'interactive/menu/menu';
-// @import 'interactive/menuitem/menuitem';
-// @import 'interactive/summary/summary';
+// @import 'interactive/all';

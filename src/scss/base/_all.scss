@@ -1,12 +1,15 @@
-// Settings
-@import 'settings/all';
+// Base
 
-// Functions
-@import 'functions/all';
+// Imports
 
-// Mixins
-// @import 'mixins/all';
+// Normalize
+@import '/node_modules/normalize.css/normalize.css';
+
+// Tools
+@import 'tools/all';
+
+// Abstract elements
+@import 'abstract/all';
 
 // Elements
-@import '/node_modules/normalize.css/normalize.css';
 @import 'elements/all';
