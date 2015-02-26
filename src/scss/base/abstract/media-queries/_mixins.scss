@@ -7,6 +7,12 @@
 // aliases
 
 // medium
+@mixin small() {
+  @include media-query($breakpoint-small) {
+    @content;
+  }
+}
+
 @mixin medium() {
   @include media-query($breakpoint-medium) {
     @content;
@@ -14,7 +20,25 @@
 }
 
 @mixin large() {
-  @include media-query($breakpoint-medium) {
+  @include media-query($breakpoint-large) {
+    @content;
+  }
+}
+
+@mixin xlarge() {
+  @include media-query($breakpoint-xlarge) {
+    @content;
+  }
+}
+
+@mixin xxlarge() {
+  @include media-query($breakpoint-xxlarge) {
+    @content;
+  }
+}
+
+@mixin xxxlarge() {
+  @include media-query($breakpoint-xxxlarge) {
     @content;
   }
 }

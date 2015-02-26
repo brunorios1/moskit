@@ -24,10 +24,33 @@
 
 // Column
 .grid-column {
+  width: 100%;
   padding-right: rem($grid-gutter / 2);
   padding-left: rem($grid-gutter / 2);
   float: left;
 }
 
 // Generates grid-[n] classes dynamically based on number of columns
-@include grid-column-classes();
+@include small() {
+  @include grid-column-classes(small);
+}
+
+@include medium() {
+  @include grid-column-classes(medium);
+}
+
+@include large() {
+  @include grid-column-classes(large);
+}
+
+@include xlarge() {
+  @include grid-column-classes(xlarge);
+}
+
+@include xxlarge() {
+  @include grid-column-classes(xxlarge);
+}
+
+@include xxxlarge() {
+  @include grid-column-classes(xxxlarge);
+}
