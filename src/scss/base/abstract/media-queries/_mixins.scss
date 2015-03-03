@@ -1,44 +1,15 @@
-@mixin media-query($breakpoint) {
-  @media (min-width: $breakpoint) {
+@mixin mq($mq) {
+  @media (min-width: $mq) {
     @content;
   }
 }
 
-// aliases
-
-// medium
-@mixin small() {
-  @include media-query($breakpoint-small) {
-    @content;
-  }
-}
-
-@mixin medium() {
-  @include media-query($breakpoint-medium) {
-    @content;
-  }
-}
-
-@mixin large() {
-  @include media-query($breakpoint-large) {
-    @content;
-  }
-}
-
-@mixin xlarge() {
-  @include media-query($breakpoint-xlarge) {
-    @content;
-  }
-}
-
-@mixin xxlarge() {
-  @include media-query($breakpoint-xxlarge) {
-    @content;
-  }
-}
-
-@mixin xxxlarge() {
-  @include media-query($breakpoint-xxxlarge) {
-    @content;
-  }
-}
+// generates mq-[media-query] aliases dynamically based on the media queries
+// waiting for https://github.com/sass/sass/issues/626
+// @for $i from 1 through length($mq-names) {
+//   @mixin mq-#{nth($mq-names, $i)}() {
+//     @include mq(nth($mq-values, $i)) {
+//       @content;
+//     }
+//   }
+// }

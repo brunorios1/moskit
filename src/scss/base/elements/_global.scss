@@ -11,13 +11,13 @@
     box-sizing: inherit;
   }
 
-  // Removes margin-top for first-child elements
-  &:first-child {
-    margin-top: 0;
-  }
+  // // Removes margin-top for first-child elements
+  // &:first-child {
+  //   margin-top: 0;
+  // }
 
-  // Removes margin-bottom for last-child elements
-  &:last-child {
-    margin-bottom: 0;
-  }
+  // // Removes margin-bottom for last-child elements
+  // &:last-child {
+  //   margin-bottom: 0;
+  // }
 }
