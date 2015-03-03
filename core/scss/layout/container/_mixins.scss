@@ -26,11 +26,11 @@
 @mixin container(
   $size: null,
   $gutter: $container-gutter,
-  $gutter-mq: $container-gutter-mq,
+  $gutter-bp: $container-gutter-bp,
   $max-width: $container-max-width,
-  $max-width-mq: $container-max-width-mq,
+  $max-width-bp: $container-max-width-bp,
   $align: $container-align,
-  $align-mq: $container-align-mq) {
+  $align-bp: $container-align-bp) {
 
   // set container gutter
   @include container-gutter($gutter);
@@ -44,16 +44,16 @@
   }
 
   // loop through each media query
-  @each $mq-name, $mq-value in $mq-map {
+  @each $bp-name, $bp-value in $bp-map {
     // set container gutter
-    @include mq($mq-value) {
-      @include container-gutter(map-get($gutter-mq, $mq-name));
+    @include bp($bp-value) {
+      @include container-gutter(map-get($gutter-bp, $bp-name));
 
       @if ($size == constrained) {
         // set container constrained max width
-        @include container-max-width(map-get($max-width-mq, $mq-name));
+        @include container-max-width(map-get($max-width-bp, $bp-name));
         // set container constrained alignment
-        @include container-align(map-get($align-mq, $mq-name));
+        @include container-align(map-get($align-bp, $bp-name));
       }
     }
   }

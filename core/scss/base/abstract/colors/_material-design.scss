@@ -284,7 +284,7 @@ $brown--700:  nth($palette-brown, 8);
 $brown--800:  nth($palette-brown, 9);
 $brown--900:  nth($palette-brown, 10);
 
-$grey--50:   nth($palette-grey, 1);
+$grey--50:   nth($palette-grey, 1) !default;
 $grey--100:  nth($palette-grey, 2);
 $grey--200:  nth($palette-grey, 3);
 $grey--300:  nth($palette-grey, 4);

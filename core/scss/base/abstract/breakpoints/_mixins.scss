@@ -1,10 +1,10 @@
-@mixin mq($mq) {
+@mixin bp($mq) {
   @media (min-width: $mq) {
     @content;
   }
 }
 
-// generates mq-[media-query] aliases dynamically based on the media queries
+// generates bp-[media-query] aliases dynamically based on the breakpoints
 // waiting for https://github.com/sass/sass/issues/626
 // @for $i from 1 through length($mq-names) {
 //   @mixin mq-#{nth($mq-names, $i)}() {

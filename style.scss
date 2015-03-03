@@ -1,0 +1,38 @@
+// --------------------
+// #CORE
+// --------------------
+
+// Normalize.css
+@import '/node_modules/normalize.css/normalize.css';
+
+// SUIT-CSS base
+@import '/node_modules/suitcss-base/lib/base.css';
+
+// Base
+@import 'core/scss/base/all';
+
+// Layout
+@import 'core/scss/layout/all';
+
+// Modules
+// @import 'core/scss/modules/all';
+
+
+
+
+
+// --------------------
+// #CUSTOM
+// --------------------
+
+// Settings Overrides
+@import 'custom/scss/settings';
+
+// Base
+// @import 'custom/scss/base/all';
+
+// Layout
+@import 'custom/scss/layout/all';
+
+// Modules
+// @import 'custom/scss/modules/all';

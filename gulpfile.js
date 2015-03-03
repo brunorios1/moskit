@@ -7,16 +7,17 @@ var eslint = require('gulp-eslint');
 var uglify = require('gulp-uglify');
 
 var paths = {
-  styles: 'src/scss/**/*.scss',
-  scripts: 'src/js/**/*.js',
+  styles: ['style.scss', 'core/scss/**/*.scss', 'custom/scss/**/*.scss'],
+  scripts: ['core/js/**/*.js', 'custom/js/**/*.js'],
+  dist: 'dist',
 };
 
 gulp.task('clean', function(cb) {
-  del(['dist/*'], cb);
+  del([paths.dist + '/*'], cb);
 });
 
 // Styles
-gulp.task('styles', ['clean'], function() {
+gulp.task('styles', function() {
   gulp.src(paths.styles)
     // lint scss code
     .pipe(scsslint({
@@ -32,21 +33,21 @@ gulp.task('styles', ['clean'], function() {
       "mqpacker": true
     }))
     // Compiles to build folder
-    .pipe(gulp.dest('dist/css'));
+    .pipe(gulp.dest(paths.dist + '/css'));
 });
 
 // Scripts
-gulp.task('scripts', ['clean'], function() {
+gulp.task('scripts', function() {
     // Note: To have the process exit with an error code (1) on
     //  lint error, return the stream and pipe to failOnError last.
-    gulp.src([paths.scripts])
+    gulp.src(paths.scripts)
       .pipe(eslint())
       .pipe(eslint.format())
       // .pipe(eslint.failOnError())
       // Minify JS
       .pipe(uglify())
       // Compiles to build folder
-      .pipe(gulp.dest('dist/js'));
+      .pipe(gulp.dest(paths.dist + '/js'));
 });
 
 // Check for changes and rerun tasks when a file changes
@@ -56,4 +57,4 @@ gulp.task('watch', ['styles', 'scripts'], function() {
 });
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['styles', 'scripts']);
+gulp.task('default', ['clean', 'styles', 'scripts']);

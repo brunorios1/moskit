@@ -1,0 +1,20 @@
+// Media Queries
+
+// Settings
+
+// Breakpoints
+$bp-small:    em(480);
+$bp-medium:   em(768);
+$bp-large:    em(1024);
+$bp-xlarge:   em(1366);
+$bp-xxlarge:  em(1600);
+$bp-xxxlarge: em(1920);
+
+$bp-map: (
+  small:    $bp-small,
+  medium:   $bp-medium,
+  large:    $bp-large,
+  xlarge:   $bp-xlarge,
+  xxlarge:  $bp-xxlarge,
+  xxxlarge: $bp-xxxlarge
+);

@@ -68,9 +68,9 @@
   }
 }
 
-@mixin grid-classes($mq: null) {
+@mixin grid-classes($bp: null) {
   @if($grid-classes == true) {
-    @if($mq == null) {
+    @if($bp == null) {
 
       // Row
       .l-grid__row {
@@ -112,36 +112,36 @@
       }
     }
 
-    @if($mq) {
+    @if($bp) {
       // Offset, push and pull resets
-      .l-grid__col--offset-reset--mq-#{$mq} {
+      .l-grid__col--offset-reset--bp-#{$bp} {
         margin-left: 0;
       }
 
-      .l-grid__col--push-reset--mq-#{$mq} {
+      .l-grid__col--push-reset--bp-#{$bp} {
         left: auto;
       }
 
-      .l-grid__col--pull-reset--mq-#{$mq} {
+      .l-grid__col--pull-reset--bp-#{$bp} {
         right: auto;
       }
 
       // Centered, Left and Right alignments
-      .l-grid__col--centered--mq-#{$mq} {
+      .l-grid__col--centered--bp-#{$bp} {
         @include grid-align(center);
       }
 
-      .l-grid__col--right--mq-#{$mq} {
+      .l-grid__col--right--bp-#{$bp} {
         @include grid-align(right);
       }
 
-      .l-grid__col--left--mq-#{$mq} {
+      .l-grid__col--left--bp-#{$bp} {
         @include grid-align(left);
       }
     }
 
     @for $i from 1 through $grid-columns {
-      @if($mq == null) {
+      @if($bp == null) {
         // Generates column classes
         // .l-grid-[n]
         .l-grid__col-#{$i} {
@@ -167,28 +167,28 @@
         }
       }
 
-      @if($mq) {
+      @if($bp) {
         // Generates responsive column classes
         // .l-grid__col-[n]--[breakpoint]
-        .l-grid__col-#{$i}--mq-#{$mq} {
+        .l-grid__col-#{$i}--bp-#{$bp} {
           @include grid-column($columns: $i);
         }
 
         // Generates responsive column offset classes
         // .l-grid__col--offset-[n]--[breakpoint]
-        .l-grid__col--offset-#{$i}--mq-#{$mq} {
+        .l-grid__col--offset-#{$i}--bp-#{$bp} {
           @include grid-offset($columns: $i);
         }
 
         // Generates responsive column offset classes
         // .l-grid__col-push-[n]--[breakpoint]
-        .l-grid__col--push-#{$i}--mq-#{$mq} {
+        .l-grid__col--push-#{$i}--bp-#{$bp} {
           @include grid-push($columns: $i);
         }
 
         // Generates responsive column offset classes
         // .l-grid__col-pull-[n]--[breakpoint]
-        .l-grid__col--pull-#{$i}--mq-#{$mq} {
+        .l-grid__col--pull-#{$i}--bp-#{$bp} {
           @include grid-pull($columns: $i);
         }
       }

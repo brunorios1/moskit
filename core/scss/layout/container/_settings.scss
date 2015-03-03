@@ -5,7 +5,7 @@
 // Constrained Container Max Width
 // fixed value or percentage
 $container-max-width: 100%;
-$container-max-width-mq: (
+$container-max-width-bp: (
   small: 80%,
   medium: 80%,
   large: 80%,
@@ -17,7 +17,7 @@ $container-max-width-mq: (
 // Constrained Container Alignment
 // center, left or right
 $container-align: center;
-$container-align-mq: (
+$container-align-bp: (
   small: left,
   medium: right,
   large: left,
@@ -28,7 +28,7 @@ $container-align-mq: (
 
 // Container Gutter
 $container-gutter: rem(20);
-$container-gutter-mq: (
+$container-gutter-bp: (
   small: rem(20),
   medium: 0,
   large: 0,

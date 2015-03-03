@@ -14,9 +14,9 @@
   // Generates responsive l-grid-[breakpoint]-[n], l-grid-[breakpoint]-offset-[n]
   // and other classes based on number of columns
   // @if($media-queries-enabled == true) {
-  @each $mq-name, $mq-value in $mq-map {
-    @include mq($mq-value) {
-      @include grid-classes($mq-name);
+  @each $bp-name, $bp-value in $bp-map {
+    @include bp($bp-value) {
+      @include grid-classes($bp-name);
     }
   }
   // }

@@ -4,8 +4,8 @@
 
 @include container-classes();
 
-@each $mq-name, $mq-value in $mq-map {
-  @include mq($mq-value) {
+@each $bp-name, $bp-value in $bp-map {
+  @include bp($bp-value) {
     @include container-classes();
   }
 }
