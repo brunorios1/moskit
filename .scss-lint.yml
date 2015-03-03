@@ -2,5 +2,9 @@
 # https://github.com/causes/scss-lint
 
 linters:
+  NestingDepth:
+    max_depth: 5
   PropertySortOrder:
     order: smacss
+  SelectorFormat:
+    convention: hyphenated_BEM
