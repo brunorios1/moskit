@@ -8,13 +8,15 @@
 // Grid
 @import 'grid/all';
 
+@import 'sticky-footer/all';
+
 // Regions
 
 // Header
-// @import 'regions/header/all';
+@import 'regions/header/all';
 
 // Content
 // @import 'regions/content/all';
 
 // Footer
-// @import 'regions/footer/all';
+@import 'regions/footer/all';

@@ -9,76 +9,111 @@
     <link rel="stylesheet" href="/dist/css/style.css">
   </head>
   <body>
-    <header>
-      <div class="layout-container layout-container--constrained">
+    <header class="region-header">
+      <div class="l-container l-container--constrained">
         <h1>Moskit</h1>
+        <p>A modular front-end starter kit</p>
       </div>
     </header>
-    <main>
-      <div class="layout-container layout-container--constrained">
-        <p>A modern front-end starter kit</p>
 
-        <h2>I'm the grid</h2>
+    <main class="region-main">
+      <div class="l-container l-container--constrained">
 
-        <div class="grid-row grid-row--display">
-          <div class="grid-small-2 grid-column">
-            grid-small-2
+        <h2>The grid</h2>
+
+        <div class="l-grid__row l-grid__row--display">
+          <div class="l-grid__col l-grid__col-2--mq-small">
+            2 on small
           </div>
-          <div class="grid-small-2 grid-column">
-            grid-small-2
+          <div class="l-grid__col l-grid__col-2--mq-small">
+            2 on small
           </div>
-          <div class="grid-small-2 grid-column">
-            grid-small-2
+          <div class="l-grid__col l-grid__col-2--mq-small">
+            2 on small
           </div>
-          <div class="grid-small-2 grid-column">
-            grid-small-2
+          <div class="l-grid__col l-grid__col-2--mq-small">
+            2 on small
           </div>
-          <div class="grid-small-2 grid-column">
-            grid-small-2
+          <div class="l-grid__col l-grid__col-2--mq-small">
+            2 on small
           </div>
-          <div class="grid-small-2 grid-column">
-            grid-small-2
-          </div>
-        </div>
-        <div class="grid-row grid-row--display">
-          <div class="grid-medium-3 grid-column">
-            grid-medium-3
-          </div>
-          <div class="grid-medium-3 grid-column">
-            grid-medium-3
-          </div>
-          <div class="grid-medium-3 grid-column">
-            grid-medium-3
-          </div>
-          <div class="grid-medium-3 grid-column">
-            grid-medium-3
+          <div class="l-grid__col l-grid__col-2--mq-small">
+            2 on small
           </div>
         </div>
-        <div class="grid-row grid-row--display">
-          <div class="grid-large-4 grid-column">
-            grid-large-4
+
+        <div class="l-grid__row l-grid__row--display">
+          <div class="l-grid__col l-grid__col-3--mq-medium">
+            3 on medium
           </div>
-          <div class="grid-large-4 grid-column">
-            grid-large-4
+          <div class="l-grid__col l-grid__col-3--mq-medium">
+            3 on medium
           </div>
-          <div class="grid-large-4 grid-column">
-            grid-large-4
+          <div class="l-grid__col l-grid__col-3--mq-medium">
+            3 on medium
+          </div>
+          <div class="l-grid__col l-grid__col-3--mq-medium">
+            3 on medium
           </div>
         </div>
-        <div class="grid-row grid-row--display">
-          <div class="grid-xlarge-6 grid-column">
-            grid-xlarge-6
+
+        <div class="l-grid__row l-grid__row--display">
+          <div class="l-grid__col l-grid__col-4--mq-large">
+            4 on large
           </div>
-          <div class="grid-xlarge-6 grid-column">
-            grid-xlarge-6
+          <div class="l-grid__col l-grid__col-4--mq-large l-grid__col--offset-4--mq-large">
+            4 on large, offset 4 on large
+          </div>
+        </div>
+
+        <div class="l-grid__row l-grid__row--display">
+          <div class="l-grid__col l-grid__col-9--mq-large l-grid__col-6--mq-xlarge">
+            9 on large, 6 on xlarge
+            <div class="l-grid__row">
+              <div class="l-grid__col l-grid__col-6">
+                6, nested
+                <div class="l-grid__row">
+                  <div class="l-grid__col l-grid__col-6">
+                    6, nested again
+                  </div>
+                  <div class="l-grid__col l-grid__col-6">
+                    6, nested again
+                  </div>
+                </div>
+              </div>
+              <div class="l-grid__col l-grid__col-6">
+                6, nested
+              </div>
+            </div>
+          </div>
+
+          <div class="l-grid__col l-grid__col-3--mq-large l-grid__col-6--mq-xlarge">
+            3 on large, 6 on xlarge
           </div>
         </div>
       </div>
     </main>
-    <footer>
-      <div class="layout-container layout-container--constrained">
-        ...
+
+    <footer class="region-footer">
+      <div class="l-container l-container--constrained">
+        Responsive - Mobile First - Sass - SMACSS - BEM - OOCSS
       </div>
     </footer>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
