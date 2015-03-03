@@ -4,53 +4,46 @@
 
 // Styles
 
-// Row
-.grid-row {
-  @include clearfix;
-  margin-right: rem(-$grid-gutter / 2);
-  margin-left: rem(-$grid-gutter / 2);
+// Generates l-grid-[n], l-grid-offset-[n] and other classes dynamically based
+// on number of columns
+@if($grid-classes == true) {
 
-  &--display {
-    margin-right: 0;
-    margin-bottom: 10px;
-    margin-left: 0;
-    border: 1px solid $blue-grey--500;
+  // generate column classes
+  @include grid-classes();
 
-    .grid-column:nth-child(2n) {
-      background: $blue-grey--500;
+  // Generates responsive l-grid-[breakpoint]-[n], l-grid-[breakpoint]-offset-[n]
+  // and other classes based on number of columns
+  // @if($media-queries-enabled == true) {
+  @each $mq-name, $mq-value in $mq-map {
+    @include mq($mq-value) {
+      @include grid-classes($mq-name);
     }
   }
+  // }
 }
 
-// Column
-.grid-column {
-  width: 100%;
-  padding-right: rem($grid-gutter / 2);
-  padding-left: rem($grid-gutter / 2);
-  float: left;
-}
+// To-do
+// move this to the demonstration site in the future
+@if($grid-classes == true) {
+  .l-grid__row {
+    &--display {
+      margin-right: 0;
+      margin-bottom: 10px;
+      margin-left: 0;
+      background: $grey--100;
+      line-height: 3em;
 
-// Generates grid-[n] classes dynamically based on number of columns
-@include small() {
-  @include grid-column-classes(small);
-}
+      .l-grid__col {
+        font-size: rem(12);
+      }
 
-@include medium() {
-  @include grid-column-classes(medium);
-}
+      .l-grid__col:nth-of-type(even) {
+        background: $grey--300;
+      }
 
-@include large() {
-  @include grid-column-classes(large);
-}
-
-@include xlarge() {
-  @include grid-column-classes(xlarge);
-}
-
-@include xxlarge() {
-  @include grid-column-classes(xxlarge);
-}
-
-@include xxxlarge() {
-  @include grid-column-classes(xxxlarge);
+      .l-grid__col:nth-of-type(odd) {
+        background: $grey--200;
+      }
+    }
+  }
 }

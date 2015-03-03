@@ -1,0 +1,5 @@
+@function grid-calc($columns, $grid-columns) {
+  $result: percentage(($columns / $grid-columns));
+  // @if $result == 0% { $result: 0; }
+  @return $result;
+}

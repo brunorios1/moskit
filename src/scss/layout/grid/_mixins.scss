@@ -1,13 +1,197 @@
 // Mixins
 
-@mixin grid-column($columns: 1) {
-  width: percentage($columns / $grid-columns);
+// Rows
+@mixin grid-row($gutter: $grid-gutter) {
+  @include clearfix;
+  margin-right: rem(-$gutter / 2);
+  margin-left: rem(-$gutter / 2);
 }
 
-@mixin grid-column-classes($size) {
-  @for $i from 1 through $grid-columns {
-    .grid-#{$size}-#{$i} {
-      @include grid-column($columns: $i);
+// Columns
+@mixin grid-column($columns: 1, $offset: null, $push: null, $pull: null, $align: null) {
+  width: percentage($columns / $grid-columns);
+
+  @if($grid-classes == false) {
+    padding-right: rem($grid-gutter / 2);
+    padding-left: rem($grid-gutter / 2);
+    float: left;
+  }
+
+  @if($offset) {
+    @include grid-offset($offset);
+  }
+
+  @if($push) {
+    @include grid-push($push);
+  }
+
+  @if($pull) {
+    @include grid-pull($pull);
+  }
+
+  @if($align) {
+    @include grid-align($align);
+  }
+}
+
+// Offset
+@mixin grid-offset($columns: 1) {
+  margin-left: percentage($columns / $grid-columns);
+}
+
+// Push
+@mixin grid-push($columns: 1) {
+  position: relative;
+  left: percentage($columns / $grid-columns);
+  right: auto;
+}
+
+// Pull
+@mixin grid-pull($columns: 1) {
+  position: relative;
+  right: percentage($columns / $grid-columns);
+  left: auto;
+}
+
+// Centered
+@mixin grid-align($align) {
+  @if($align == center) {
+    margin-right: auto;
+    margin-left: auto;
+    float: none;
+
+  } @elseif($align == left) {
+    float: left;
+
+  } @elseif($align == right) {
+    float: right;
+  }
+}
+
+@mixin grid-classes($mq: null) {
+  @if($grid-classes == true) {
+    @if($mq == null) {
+
+      // Row
+      .l-grid__row {
+        @include grid-row();
+      }
+
+      // Columns
+      .l-grid__col {
+        @include grid-column($grid-columns);
+        padding-right: rem($grid-gutter / 2);
+        padding-left: rem($grid-gutter / 2);
+        float: left;
+      }
+
+      // Offset, push and pull resets
+      .l-grid__col--offset-reset {
+        margin-left: 0;
+      }
+
+      .l-grid__col--push-reset {
+        left: auto;
+      }
+
+      .l-grid__col--pull-reset {
+        right: auto;
+      }
+
+      // Centered, Left, Right Columns
+      .l-grid__col--centered {
+        @include grid-align(center);
+      }
+
+      .l-grid__col--right {
+        @include grid-align(right);
+      }
+
+      .l-grid__col--left {
+        @include grid-align(left);
+      }
+    }
+
+    @if($mq) {
+      // Offset, push and pull resets
+      .l-grid__col--offset-reset--mq-#{$mq} {
+        margin-left: 0;
+      }
+
+      .l-grid__col--push-reset--mq-#{$mq} {
+        left: auto;
+      }
+
+      .l-grid__col--pull-reset--mq-#{$mq} {
+        right: auto;
+      }
+
+      // Centered, Left and Right alignments
+      .l-grid__col--centered--mq-#{$mq} {
+        @include grid-align(center);
+      }
+
+      .l-grid__col--right--mq-#{$mq} {
+        @include grid-align(right);
+      }
+
+      .l-grid__col--left--mq-#{$mq} {
+        @include grid-align(left);
+      }
+    }
+
+    @for $i from 1 through $grid-columns {
+      @if($mq == null) {
+        // Generates column classes
+        // .l-grid-[n]
+        .l-grid__col-#{$i} {
+          @include grid-column($columns: $i);
+        }
+
+        // Generates column offset classes
+        // .l-grid__col--offset-[n]
+        .l-grid__col--offset-#{$i} {
+          @include grid-offset($columns: $i);
+        }
+
+        // Generates column push classes
+        // .l-grid__col--push-[n]
+        .l-grid__col--push-#{$i} {
+          @include grid-push($columns: $i);
+        }
+
+        // Generates column push classes
+        // .l-grid__col--pull-[n]
+        .l-grid__col--pull-#{$i} {
+          @include grid-push($columns: $i);
+        }
+      }
+
+      @if($mq) {
+        // Generates responsive column classes
+        // .l-grid__col-[n]--[breakpoint]
+        .l-grid__col-#{$i}--mq-#{$mq} {
+          @include grid-column($columns: $i);
+        }
+
+        // Generates responsive column offset classes
+        // .l-grid__col--offset-[n]--[breakpoint]
+        .l-grid__col--offset-#{$i}--mq-#{$mq} {
+          @include grid-offset($columns: $i);
+        }
+
+        // Generates responsive column offset classes
+        // .l-grid__col-push-[n]--[breakpoint]
+        .l-grid__col--push-#{$i}--mq-#{$mq} {
+          @include grid-push($columns: $i);
+        }
+
+        // Generates responsive column offset classes
+        // .l-grid__col-pull-[n]--[breakpoint]
+        .l-grid__col--pull-#{$i}--mq-#{$mq} {
+          @include grid-pull($columns: $i);
+        }
+      }
     }
   }
 }
