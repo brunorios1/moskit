@@ -2,8 +2,11 @@
 
 // Imports
 
-// Normalize
+// Normalize.css
 @import '/node_modules/normalize.css/normalize.css';
+
+// SUIT-CSS base
+@import '/node_modules/suitcss-base/lib/base.css';
 
 // Tools
 @import 'tools/all';
