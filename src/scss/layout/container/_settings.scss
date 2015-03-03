@@ -2,10 +2,41 @@
 
 // Settings
 
-// Full Container
-$container-padding: em(20px);
-$container-padding--medium: $container-padding;
-$container-padding--large: 0;
+// Constrained Container Max Width
+// fixed value or percentage
+$container-max-width: 100%;
+$container-max-width-mq: (
+  small: 80%,
+  medium: 80%,
+  large: 80%,
+  xlarge: 80%,
+  xxlarge: 80%,
+  xxxlarge: 80%
+);
 
-// Constrained Container
-$container--constrained-max-width--large: 80%;
+// Constrained Container Alignment
+// center, left or right
+$container-align: center;
+$container-align-mq: (
+  small: left,
+  medium: right,
+  large: left,
+  xlarge: center,
+  xxlarge: center,
+  xxxlarge: center
+);
+
+// Container Gutter
+$container-gutter: rem(20);
+$container-gutter-mq: (
+  small: rem(20),
+  medium: 0,
+  large: 0,
+  xlarge: 0,
+  xxlarge: 0,
+  xxxlarge: 0
+);
+
+// Presentational container classes
+// boolean
+$container-classes: true;

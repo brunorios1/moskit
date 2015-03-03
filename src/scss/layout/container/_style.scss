@@ -2,22 +2,10 @@
 
 // Style
 
-// Full container
-.layout-container {
-  padding-right: $container-padding;
-  padding-left: $container-padding;
+@include container-classes();
 
-  @include large() {
-    padding-right: $container-padding--large;
-    padding-left: $container-padding--large;
-  }
-}
-
-// Constrained container
-.layout-container--constrained {
-  @include large() {
-    max-width: $container--constrained-max-width--large;
-    margin-right: auto;
-    margin-left: auto;
+@each $mq-name, $mq-value in $mq-map {
+  @include mq($mq-value) {
+    @include container-classes();
   }
 }

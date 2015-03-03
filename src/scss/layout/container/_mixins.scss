@@ -1,0 +1,83 @@
+@mixin container-gutter($gutter: $container-gutter) {
+  padding-right: $gutter;
+  padding-left: $gutter;
+}
+
+@mixin container-max-width($width: $container-max-width) {
+  max-width: $width;
+}
+
+@mixin container-align($align: $container-align) {
+  @if($align == center) {
+    margin-right: auto;
+    margin-left: auto;
+
+  } @elseif($align == right) {
+    margin-right: 0;
+    margin-left: auto;
+
+  } @elseif($align == left) {
+    margin-right: auto;
+    margin-left: 0;
+  }
+}
+
+
+@mixin container(
+  $size: null,
+  $gutter: $container-gutter,
+  $gutter-mq: $container-gutter-mq,
+  $max-width: $container-max-width,
+  $max-width-mq: $container-max-width-mq,
+  $align: $container-align,
+  $align-mq: $container-align-mq) {
+
+  // set container gutter
+  @include container-gutter($gutter);
+
+  @if ($size == constrained) {
+    // set container max width
+    @include container-max-width($max-width);
+
+    // align the container
+    @include container-align($align);
+  }
+
+  // loop through each media query
+  @each $mq-name, $mq-value in $mq-map {
+    // set container gutter
+    @include mq($mq-value) {
+      @include container-gutter(map-get($gutter-mq, $mq-name));
+
+      @if ($size == constrained) {
+        // set container constrained max width
+        @include container-max-width(map-get($max-width-mq, $mq-name));
+        // set container constrained alignment
+        @include container-align(map-get($align-mq, $mq-name));
+      }
+    }
+  }
+}
+
+@mixin container-classes() {
+  @if($container-classes == true) {
+    .l-container {
+      @include container();
+
+      &--constrained {
+        // Constrained container
+        @include container($size: constrained);
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
