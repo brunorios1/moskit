@@ -1,0 +1,17 @@
+// Base
+
+// Border Box
+
+html {
+  box-sizing: border-box;
+}
+
+* {
+  // * { Box-sizing: Border-box } FTW
+  // http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+  &,
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+}

@@ -1,0 +1,109 @@
+@mixin container-gutter($gutter: $container-gutter) {
+  padding-right: $gutter;
+  padding-left: $gutter;
+}
+
+@mixin container-max-width($width: $container-max-width) {
+  max-width: $width;
+}
+
+@mixin container-align($align: $container-align) {
+  @if($align == center) {
+    margin-right: auto;
+    margin-left: auto;
+
+  } @elseif($align == right) {
+    margin-right: 0;
+    margin-left: auto;
+
+  } @elseif($align == left) {
+    margin-right: auto;
+    margin-left: 0;
+  }
+}
+
+@mixin container(
+  $size: null,
+  $gutter: $container-gutter,
+  $gutter-bp: $container-gutter-bp,
+  $max-width: $container-max-width,
+  $max-width-bp: $container-max-width-bp,
+  $align: $container-align,
+  $align-bp: $container-align-bp) {
+
+  // @if ($size == null) {
+    // set container gutter
+    @include container-gutter($gutter);
+  // }
+
+  // @if ($size == constrained) {
+    // set container max width
+    @include container-max-width($max-width);
+
+    @if($container-classes == false) {
+      // align the container
+      @include container-align($align);
+    }
+  // }
+
+  // loop through each breakpoint
+  @each $bp-name, $bp-value in $bp-map {
+    // set container gutter
+    @include bp($bp-value) {
+      @include container-gutter(map-get($gutter-bp, $bp-name));
+
+      // @if ($size == constrained) {
+        // set container constrained max width
+        @include container-max-width(map-get($max-width-bp, $bp-name));
+
+        @if($container-classes == false) {
+          // set container constrained alignment
+          @include container-align(map-get($align-bp, $bp-name));
+        }
+      // }
+    }
+  }
+}
+
+@mixin container-classes($bp: null) {
+  @if($container-classes == true) {
+    .l-container {
+      @if($bp == null) {
+        @include container();
+      }
+
+      // &--constrained {
+        // Constrained container
+        // @include container($size: constrained);
+
+        @if($bp == null) {
+          // Centered, Left, Right
+          &--align-centered {
+            @include container-align(center);
+          }
+
+          &--align-left {
+            @include container-align(left);
+          }
+
+          &--align-right {
+            @include container-align(right);
+          }
+        }
+
+        @if($bp) {
+          // Offset, push and pull resets
+          &--align-centered--bp-#{$bp} {
+            @include container-align(center);
+          }
+          &--align-left--bp-#{$bp} {
+            @include container-align(left);
+          }
+          &--align-right--bp-#{$bp} {
+            @include container-align(right);
+          }
+        }
+      // }
+    }
+  }
+}

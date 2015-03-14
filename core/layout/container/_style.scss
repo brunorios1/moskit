@@ -1,0 +1,13 @@
+// Container
+
+// Style
+
+@if($container-classes == true) {
+  @include container-classes();
+
+  @each $bp-name, $bp-value in $bp-map {
+    @include bp($bp-value) {
+      @include container-classes($bp-name);
+    }
+  }
+}

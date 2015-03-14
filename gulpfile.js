@@ -7,8 +7,8 @@ var eslint = require('gulp-eslint');
 var uglify = require('gulp-uglify');
 
 var paths = {
-  styles: ['style.scss', 'core/scss/**/*.scss', 'custom/scss/**/*.scss'],
-  scripts: ['core/js/**/*.js', 'custom/js/**/*.js'],
+  styles: ['style.scss', 'core/**/*.scss', 'custom/**/*.scss'],
+  scripts: ['core/**/*.js', 'custom/**/*.js'],
   dist: 'dist',
 };
 
