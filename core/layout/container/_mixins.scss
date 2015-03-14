@@ -31,28 +31,24 @@
   $align: $container-align,
   $align-bp: $container-align-bp) {
 
-  // @if ($size == null) {
-    // set container gutter
-    @include container-gutter($gutter);
-  // }
+  // set container gutter
+  @include container-gutter($gutter);
 
-  // @if ($size == constrained) {
-    // set container max width
-    @include container-max-width($max-width);
+  // set container max width
+  @include container-max-width($max-width);
 
-    @if($container-classes == false) {
-      // align the container
-      @include container-align($align);
-    }
-  // }
+  @if($container-classes == false) {
+    // align the container
+    @include container-align($align);
+  }
 
-  // loop through each breakpoint
-  @each $bp-name, $bp-value in $bp-map {
-    // set container gutter
-    @include bp($bp-value) {
-      @include container-gutter(map-get($gutter-bp, $bp-name));
+  @if($bp--enabled == true) {
+    // loop through each breakpoint
+    @each $bp-name, $bp-value in $bp-map {
+      // set container gutter
+      @include bp($bp-value) {
+        @include container-gutter(map-get($gutter-bp, $bp-name));
 
-      // @if ($size == constrained) {
         // set container constrained max width
         @include container-max-width(map-get($max-width-bp, $bp-name));
 
@@ -60,7 +56,7 @@
           // set container constrained alignment
           @include container-align(map-get($align-bp, $bp-name));
         }
-      // }
+      }
     }
   }
 }
@@ -72,38 +68,35 @@
         @include container();
       }
 
-      // &--constrained {
-        // Constrained container
-        // @include container($size: constrained);
-
-        @if($bp == null) {
-          // Centered, Left, Right
-          &--align-centered {
-            @include container-align(center);
-          }
-
-          &--align-left {
-            @include container-align(left);
-          }
-
-          &--align-right {
-            @include container-align(right);
-          }
+      @if($bp == null) {
+        // Centered, Left, Right
+        &--align-centered {
+          @include container-align(center);
         }
 
-        @if($bp) {
-          // Offset, push and pull resets
-          &--align-centered--bp-#{$bp} {
-            @include container-align(center);
-          }
-          &--align-left--bp-#{$bp} {
-            @include container-align(left);
-          }
-          &--align-right--bp-#{$bp} {
-            @include container-align(right);
-          }
+        &--align-left {
+          @include container-align(left);
         }
-      // }
+
+        &--align-right {
+          @include container-align(right);
+        }
+      }
+
+      @if($bp and $bp--enabled == true) {
+        // Centered, Left, Right - Responsive
+        &--align-centered--bp-#{$bp} {
+          @include container-align(center);
+        }
+
+        &--align-left--bp-#{$bp} {
+          @include container-align(left);
+        }
+
+        &--align-right--bp-#{$bp} {
+          @include container-align(right);
+        }
+      }
     }
   }
 }

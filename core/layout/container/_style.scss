@@ -5,9 +5,11 @@
 @if($container-classes == true) {
   @include container-classes();
 
-  @each $bp-name, $bp-value in $bp-map {
-    @include bp($bp-value) {
-      @include container-classes($bp-name);
+  @if($bp--enabled == true) {
+    @each $bp-name, $bp-value in $bp-map {
+      @include bp($bp-value) {
+        @include container-classes($bp-name);
+      }
     }
   }
 }

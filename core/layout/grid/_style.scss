@@ -13,16 +13,16 @@
 
   // Generates responsive l-grid-[breakpoint]-[n], l-grid-[breakpoint]-offset-[n]
   // and other classes based on number of columns
-  // @if($media-queries-enabled == true) {
-  @each $bp-name, $bp-value in $bp-map {
-    @include bp($bp-value) {
-      @include grid-classes($bp-name);
+  @if($bp--enabled == true) {
+    @each $bp-name, $bp-value in $bp-map {
+      @include bp($bp-value) {
+        @include grid-classes($bp-name);
+      }
     }
   }
-  // }
 }
 
-// To-do
+// TO-DO
 // move this to the demonstration site in the future
 @if($grid-classes == true) {
   .l-grid__row {

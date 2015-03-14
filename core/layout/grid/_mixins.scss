@@ -69,7 +69,6 @@
 }
 
 @mixin grid-classes($bp: null) {
-  // @if($grid-classes == true) {
   @if($bp == null) {
 
     // Row
@@ -112,7 +111,7 @@
     }
   }
 
-  @if($bp) {
+  @if($bp and $bp--enabled == true) {
     // Offset, push and pull resets
     .l-grid__col--offset-reset--bp-#{$bp} {
       margin-left: 0;
@@ -167,7 +166,7 @@
       }
     }
 
-    @if($bp) {
+    @if($bp and $bp--enabled == true) {
       // Generates responsive column classes
       // .l-grid__col-[n]--[breakpoint]
       .l-grid__col-#{$i}--bp-#{$bp} {
@@ -193,5 +192,4 @@
       }
     }
   }
-  // }
 }
