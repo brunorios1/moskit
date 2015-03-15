@@ -8,10 +8,14 @@ var eslint = require('gulp-eslint');
 var uglify = require('gulp-uglify');
 var size = require('gulp-size');
 var runSequence = require('run-sequence');
+var useref = require('gulp-useref');
+var gulpif = require('gulp-if');
+var minifyHTML = require('gulp-minify-html');
 
 var paths = {
   styles: ['src/core/**/*.scss', 'src/custom/**/*.scss'],
   scripts: ['src/core/**/*.js', 'src/custom/**/*.js'],
+  html: 'src/custom/**/*.html',
   dist: 'dist',
 };
 
@@ -39,7 +43,7 @@ gulp.task('styles', function() {
     .pipe(sourcemaps.write('../../maps'))
     // Compiles to build folder
     .pipe(gulp.dest(paths.dist + '/css'))
-    // size
+    // Size
     .pipe(size({showFiles: true, title: 'styles'}));
 });
 
@@ -51,21 +55,34 @@ gulp.task('scripts', function() {
       .pipe(eslint())
       .pipe(eslint.format())
       // .pipe(eslint.failOnError())
-      // Minify JS
-      .pipe(uglify())
-      // Compiles to build folder
-      .pipe(gulp.dest(paths.dist + '/js'))
-      // size
-      .pipe(size({showFiles: true, title: 'scripts'}));
+});
+
+// Html
+gulp.task('html', function () {
+  var assets = useref.assets();
+
+  return gulp.src(paths.html)
+    .pipe(assets)
+      // Concatenates and minifies JS
+    .pipe(gulpif('*.js', uglify()))
+    .pipe(assets.restore())
+    .pipe(useref())
+    // Minifies HTML
+    .pipe(minifyHTML())
+    // Compiles HTML to build folder
+    .pipe(gulp.dest(paths.dist))
+    // Size
+    .pipe(size({showFiles: true, title: 'html'}));
 });
 
 // Check for changes and rerun tasks when a file changes
-gulp.task('watch', ['styles', 'scripts'], function() {
+gulp.task('watch', ['default'], function() {
   gulp.watch(paths.styles, ['styles']);
   gulp.watch(paths.scripts, ['scripts']);
+  gulp.watch(paths.html, ['html']);
 });
 
 // The default task (called when you run `gulp` from cli)
 gulp.task('default', function(cb) {
-  runSequence('clean', ['styles', 'scripts'], cb);
+  runSequence('clean', ['styles', 'scripts', 'html'], cb);
 });
