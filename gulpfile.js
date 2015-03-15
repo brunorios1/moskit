@@ -2,13 +2,14 @@ var gulp = require('gulp');
 var del = require('del');
 var scsslint = require('gulp-scss-lint');
 var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 var please = require('gulp-pleeease');
 var eslint = require('gulp-eslint');
 var uglify = require('gulp-uglify');
 
 var paths = {
-  styles: ['style.scss', 'core/**/*.scss', 'custom/**/*.scss'],
-  scripts: ['core/**/*.js', 'custom/**/*.js'],
+  styles: ['src/core/**/*.scss', 'src/custom/**/*.scss'],
+  scripts: ['src/core/**/*.js', 'src/custom/**/*.js'],
   dist: 'dist',
 };
 
@@ -23,6 +24,7 @@ gulp.task('styles', function() {
     .pipe(scsslint({
       'bundleExec': true
     }))
+    .pipe(sourcemaps.init())
     // compile .scss to .css
     .pipe(sass({
       // "keep gulp from stopping every time you mess up your sass"
@@ -32,6 +34,7 @@ gulp.task('styles', function() {
       "autoprefixer": { "browsers": ["last 2 versions"] },
       "mqpacker": true
     }))
+    .pipe(sourcemaps.write('../../maps'))
     // Compiles to build folder
     .pipe(gulp.dest(paths.dist + '/css'));
 });
