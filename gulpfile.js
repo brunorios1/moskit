@@ -6,6 +6,8 @@ var sourcemaps = require('gulp-sourcemaps');
 var please = require('gulp-pleeease');
 var eslint = require('gulp-eslint');
 var uglify = require('gulp-uglify');
+var size = require('gulp-size');
+var runSequence = require('run-sequence');
 
 var paths = {
   styles: ['src/core/**/*.scss', 'src/custom/**/*.scss'],
@@ -36,7 +38,9 @@ gulp.task('styles', function() {
     }))
     .pipe(sourcemaps.write('../../maps'))
     // Compiles to build folder
-    .pipe(gulp.dest(paths.dist + '/css'));
+    .pipe(gulp.dest(paths.dist + '/css'))
+    // size
+    .pipe(size({showFiles: true, title: 'styles'}));
 });
 
 // Scripts
@@ -50,7 +54,9 @@ gulp.task('scripts', function() {
       // Minify JS
       .pipe(uglify())
       // Compiles to build folder
-      .pipe(gulp.dest(paths.dist + '/js'));
+      .pipe(gulp.dest(paths.dist + '/js'))
+      // size
+      .pipe(size({showFiles: true, title: 'scripts'}));
 });
 
 // Check for changes and rerun tasks when a file changes
@@ -60,4 +66,6 @@ gulp.task('watch', ['styles', 'scripts'], function() {
 });
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['clean', 'styles', 'scripts']);
+gulp.task('default', function(cb) {
+  runSequence('clean', ['styles', 'scripts'], cb);
+});
