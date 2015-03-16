@@ -39,12 +39,12 @@ $ bundle install
 
 ## Commands
 
-### Watch for changes, lint, compile, optimize...
+### Lint, compile, serve and watch for changes
 ```sh
 $ gulp watch
 ```
 
-### Build
+### Compile, optimize and build
 ```sh
 $ gulp
 ```

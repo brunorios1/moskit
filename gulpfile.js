@@ -7,13 +7,11 @@ var please = require('gulp-pleeease');
 var eslint = require('gulp-eslint');
 var uglify = require('gulp-uglify');
 var size = require('gulp-size');
-// var runSequence = require('run-sequence');
 var useref = require('gulp-useref');
 var gulpif = require('gulp-if');
 var minifyHTML = require('gulp-minify-html');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
-
 var paths = {
   styles: ['src/core/**/*.scss', 'src/custom/**/*.scss'],
   scripts: ['src/core/**/*.js', 'src/custom/**/*.js'],
@@ -22,15 +20,16 @@ var paths = {
   dist: 'dist',
 };
 
+
+
+
+
+// Serve - Clean
 gulp.task('serve-clean', function(cb) {
   del([paths.tmp + '/*'], cb);
 });
 
-gulp.task('build-clean', function(cb) {
-  del([paths.dist + '/*'], cb);
-});
-
-// Styles
+// Serve - Styles
 gulp.task('serve-styles', ['serve-clean'], function() {
   var stream = gulp.src(paths.styles)
     // lint scss code
@@ -56,7 +55,40 @@ gulp.task('serve-styles', ['serve-clean'], function() {
   return stream;
 });
 
-// Styles
+// Serve - Scripts
+gulp.task('serve-scripts', function() {
+  // Note: To have the process exit with an error code (1) on
+  //  lint error, return the stream and pipe to failOnError last.
+  gulp.src(paths.scripts)
+    .pipe(eslint())
+    .pipe(eslint.format())
+    // .pipe(eslint.failOnError())
+});
+
+// Serve - Browser Sync
+gulp.task('browser-sync', ['serve-styles'], function() {
+  browserSync({
+    server: ["./", "./src", "./tmp"]
+  });
+});
+
+// Serve - Watch
+gulp.task('watch', ['browser-sync'], function() {
+  gulp.watch(paths.styles, ['serve-styles']);
+  gulp.watch(paths.scripts, ['serve-scripts', reload]);
+  gulp.watch(paths.html, reload);
+});
+
+
+
+
+
+// Build - Clean
+gulp.task('build-clean', function(cb) {
+  del([paths.dist + '/*'], cb);
+});
+
+// Build - Styles
 gulp.task('build-styles', ['build-clean'], function() {
   var stream = gulp.src(paths.styles)
     .pipe(sass({
@@ -70,17 +102,7 @@ gulp.task('build-styles', ['build-clean'], function() {
   return stream;
 });
 
-// Scripts
-gulp.task('serve-scripts', function() {
-  // Note: To have the process exit with an error code (1) on
-  //  lint error, return the stream and pipe to failOnError last.
-  gulp.src(paths.scripts)
-    .pipe(eslint())
-    .pipe(eslint.format())
-    // .pipe(eslint.failOnError())
-});
-
-// The default task (called when you run `gulp` from cli)
+// Build - HTML
 gulp.task('build-html', ['build-styles'], function () {
   var assets = useref.assets();
 
@@ -101,20 +123,6 @@ gulp.task('build-html', ['build-styles'], function () {
     // Size
     .pipe(size({showFiles: true, title: 'html'}));
     return stream;
-});
-
-// Browser Sync
-gulp.task('browser-sync', ['serve-styles'], function() {
-  browserSync({
-    server: ["./", "./src", "./tmp"]
-  });
-});
-
-// Watch
-gulp.task('watch', ['browser-sync'], function() {
-  gulp.watch(paths.styles, ['serve-styles']);
-  gulp.watch(paths.scripts, ['serve-scripts', reload]);
-  gulp.watch(paths.html, reload);
 });
 
 // Build
