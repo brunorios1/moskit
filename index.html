@@ -6,7 +6,11 @@
     <title>Moskit</title>
     <meta name="description" content="A modern front-end starter kit.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/dist/css/style.css">
+    <!-- build:css /css/style.min.css -->
+    <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
+    <link rel="stylesheet" href="node_modules/suitcss-base/lib/base.css">
+    <link rel="stylesheet" href="tmp/css/style.css">
+    <!-- endbuild -->
   </head>
   <body>
     <header class="l-region-header">
@@ -102,8 +106,9 @@
       </div>
     </footer>
 
-    <!-- build:js js/script.min.js -->
-    <script src="../core/modules/example/example.js"></script>
+    <!-- build:js /js/script.min.js -->
+    <script src="src/core/modules/core-module/core-module.js"></script>
+    <script src="src/custom/modules/custom-module/custom-module.js"></script>
     <!-- endbuild -->
   </body>
 </html>

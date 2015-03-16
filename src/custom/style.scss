@@ -3,16 +3,15 @@
 // --------------------
 
 // Base - Normalize.css
-@import '/node_modules/normalize.css/normalize.css';
+// @import '/node_modules/normalize.css/normalize.css';
 
 
 // Base - SUIT-CSS base
-@import '/node_modules/suitcss-base/lib/base.css';
+// @import '/node_modules/suitcss-base/lib/base.css';
 
 
 // Base - All
 @import '../core/base/all';
-
 
 // Base - Tools - All
 // @import '../core/base/tools/all';
@@ -103,7 +102,7 @@
 @import '../core/modules/all';
 
 // Modules - Example
-// @import '../core/modules/example/example';
+// @import '../core/modules/core-module/core-module';
 
 
 
@@ -137,3 +136,4 @@
 
 // Modules
 // @import 'modules/all';
+// @import 'modules/custom-module';
