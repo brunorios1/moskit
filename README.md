@@ -41,10 +41,10 @@ $ bundle install
 
 ### Lint, compile, serve and watch for changes
 ```sh
-$ gulp watch
+$ gulp (or gulp watch)
 ```
 
-### Compile, optimize and build
+### Compile and optimize
 ```sh
-$ gulp
+$ gulp build
 ```
