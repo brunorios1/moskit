@@ -1,0 +1,133 @@
+// Core / Modules / Buttons / Styles
+.button {
+  display: inline-block;
+  padding-right: 1em;
+  padding-left: 1em;
+  background-color: $grey--200;
+  color: inherit;
+  line-height: 2;
+  text-decoration: none;
+
+  &.is-disabled {
+    cursor: default;
+    opacity: .5;
+
+    &:hover,
+    &:active {
+      background: $grey--200;
+    }
+  }
+
+  &:hover {
+    background-color: $grey--300;
+  }
+
+  &:active,
+  &.is-active {
+    background-color: $grey--400;
+  }
+
+  &--action-primary {
+    color: $white;
+
+    &,
+    &.is-disabled:hover,
+    &.is-disabled:active {
+      background-color: $purple--500;
+    }
+
+    &:hover {
+      background-color: $purple--600;
+    }
+
+    &:active,
+    &.is-active {
+      background-color: $purple--700;
+    }
+  }
+
+  &--action-positive {
+    color: $white;
+
+    &,
+    &.is-disabled:hover,
+    &.is-disabled:active {
+      background-color: $green;
+    }
+
+    &:hover {
+      background-color: $green--600;
+    }
+
+    &:active,
+    &.is-active {
+      background-color: $green--700;
+    }
+  }
+
+  &--action-negative {
+    color: $white;
+
+    &,
+    &.is-disabled:hover,
+    &.is-disabled:active {
+      background-color: $red;
+    }
+
+    &:hover {
+      background-color: $red--600;
+    }
+
+    &:active,
+    &.is-active {
+      background-color: $red--700;
+    }
+  }
+
+  &--action-warning {
+    color: $white;
+
+    &,
+    &.is-disabled:hover,
+    &.is-disabled:active {
+      background-color: $amber;
+    }
+
+    &:hover {
+      background-color: $amber--600;
+    }
+
+    &:active,
+    &.is-active {
+      background-color: $amber--700;
+    }
+  }
+
+  &--size-small {
+    font-size: em(14);
+  }
+
+  &--size-large {
+    font-size: em(18);
+  }
+
+  &--size-xlarge {
+    font-size: em(20);
+  }
+
+  &--size-full-width {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  &--rounded {
+    border-radius: 4px;
+  }
+
+  &--round {
+    border-radius: 1000px;
+  }
+
+}
