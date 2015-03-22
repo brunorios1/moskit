@@ -13,3 +13,17 @@ body {
   background-color: $body-background-color;
   color: $body-color;
 }
+
+body * {
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+:focus {
+  outline-offset: -1px;
+}

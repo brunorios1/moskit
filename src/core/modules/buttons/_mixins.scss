@@ -1,4 +1,93 @@
 // Core / Modules / Buttons / Mixins
-@mixin button() {
 
+@mixin button(
+$padding--h: $button-padding--h,
+$padding--v: $button-padding--v,
+$bg-color: $button-bg-color,
+$bg-color--hover: $button-bg-color--hover,
+$bg-color--active: $button-bg-color--active,
+$color: $button-color,
+$color--hover: $button-color,
+$color--active: $button-color,
+$text-align: $button-text-align,
+$text-decoration: $button-text-decoration,
+$opacity--disabled: $button-opacity--disabled) {
+  display: inline-block;
+  padding-top: $padding--v;
+  padding-right: $padding--h;
+  padding-bottom: $padding--v;
+  padding-left: $padding--h;
+  background-color: $bg-color;
+  color: $color;
+  text-align: $text-align;
+  text-decoration: $text-decoration;
+
+  &:hover {
+    background-color: $bg-color--hover;
+    color: $color--hover;
+  }
+
+  &:active,
+  &.is-active {
+    background-color: $bg-color--active;
+    color: $color--active;
+  }
+
+  &.is-disabled {
+    cursor: default;
+    opacity: $opacity--disabled;
+
+    &:hover,
+    &:active {
+      background-color: $bg-color;
+    }
+  }
+}
+
+@mixin button-action(
+$bg-color: $button-action-bg-color,
+$bg-color--hover: $button-action-bg-color--hover,
+$bg-color--active: $button-action-bg-color--active,
+$color: $button-action-color,
+$color--hover: $button-action-color,
+$color--active: $button-action-color) {
+  color: $color;
+
+  &,
+  &.is-disabled:hover,
+  &.is-disabled:active {
+    background-color: $bg-color;
+    color: $color;
+  }
+
+  &:hover {
+    background-color: $bg-color--hover;
+    color: $color--hover;
+  }
+
+  &:active,
+  &.is-active {
+    background-color: $bg-color--active;
+    color: $color--active;
+  }
+}
+
+@mixin button-roundness($roundness: $button-roundness) {
+  @if($roundness == round) {
+    border-radius: 1000px;
+  } @else {
+    border-radius: $roundness;
+  }
+}
+
+@mixin button-width($width: $button-width) {
+  @if($width == auto) {
+    width: auto;
+  } @elseif($width == half) {
+    width: 50%;
+  } @elseif($width == full) {
+    width: 100%;
+  } @else {
+    width: $width;
+  }
 }

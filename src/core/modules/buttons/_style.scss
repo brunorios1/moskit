@@ -1,133 +1,85 @@
 // Core / Modules / Buttons / Styles
-.button {
-  display: inline-block;
-  padding-right: 1em;
-  padding-left: 1em;
-  background-color: $grey--200;
-  color: inherit;
-  line-height: 2;
-  text-decoration: none;
 
-  &.is-disabled {
-    cursor: default;
-    opacity: .5;
+@if ($button-classes == true) {
+  .button {
+    @include button();
 
-    &:hover,
-    &:active {
-      background: $grey--200;
-    }
-  }
-
-  &:hover {
-    background-color: $grey--300;
-  }
-
-  &:active,
-  &.is-active {
-    background-color: $grey--400;
-  }
-
-  &--action-primary {
-    color: $white;
-
-    &,
-    &.is-disabled:hover,
-    &.is-disabled:active {
-      background-color: $purple--500;
+    &--action-primary {
+      @include button-action();
     }
 
-    &:hover {
-      background-color: $purple--600;
+    &--action-positive {
+      @include button-action($bg-color: $green, $bg-color--hover: $green--600, $bg-color--active: $green--700);
     }
 
-    &:active,
-    &.is-active {
-      background-color: $purple--700;
+    &--action-negative {
+      @include button-action($bg-color: $red, $bg-color--hover: $red--600, $bg-color--active: $red--700);
+    }
+
+    &--action-warning {
+      @include button-action($bg-color: $amber, $bg-color--hover: $amber--600, $bg-color--active: $amber--700);
+    }
+
+    // modular scale - 5:6 - minor third
+    &--scale-xsmall {
+      font-size: .694em;
+    }
+
+    &--scale-small {
+      font-size: .833em;
+    }
+
+    &--scale-large {
+      font-size: 1.2em;
+    }
+
+    &--scale-xlarge {
+      font-size: 1.44em;
+    }
+
+    &--scale-xxlarge {
+      font-size: 1.728em;
+    }
+
+    // modular scale - 3:4 - perfect fourth
+    &--size-xsmall {
+      padding: ($button-padding--v * .563) ($button-padding--h * .563);
+    }
+
+    &--size-small {
+      padding: ($button-padding--v * .75) ($button-padding--h * .75);
+    }
+
+    &--size-large {
+      padding: ($button-padding--v * 1.333) ($button-padding--h * 1.333);
+    }
+
+    &--size-xlarge {
+      padding: ($button-padding--v * 1.777) ($button-padding--h * 1.777);
+    }
+
+    &--size-xxlarge {
+      padding: ($button-padding--v * 2.369) ($button-padding--h * 2.369);
+    }
+
+    &--width-auto {
+      @include button-width(auto);
+    }
+
+    &--width-half {
+      @include button-width(half);
+    }
+
+    &--width-full {
+      @include button-width(full);
+    }
+
+    &--rounded {
+      @include button-roundness();
+    }
+
+    &--round {
+      @include button-roundness(round);
     }
   }
-
-  &--action-positive {
-    color: $white;
-
-    &,
-    &.is-disabled:hover,
-    &.is-disabled:active {
-      background-color: $green;
-    }
-
-    &:hover {
-      background-color: $green--600;
-    }
-
-    &:active,
-    &.is-active {
-      background-color: $green--700;
-    }
-  }
-
-  &--action-negative {
-    color: $white;
-
-    &,
-    &.is-disabled:hover,
-    &.is-disabled:active {
-      background-color: $red;
-    }
-
-    &:hover {
-      background-color: $red--600;
-    }
-
-    &:active,
-    &.is-active {
-      background-color: $red--700;
-    }
-  }
-
-  &--action-warning {
-    color: $white;
-
-    &,
-    &.is-disabled:hover,
-    &.is-disabled:active {
-      background-color: $amber;
-    }
-
-    &:hover {
-      background-color: $amber--600;
-    }
-
-    &:active,
-    &.is-active {
-      background-color: $amber--700;
-    }
-  }
-
-  &--size-small {
-    font-size: em(14);
-  }
-
-  &--size-large {
-    font-size: em(18);
-  }
-
-  &--size-xlarge {
-    font-size: em(20);
-  }
-
-  &--size-full-width {
-    width: 100%;
-    padding-right: 0;
-    padding-left: 0;
-    text-align: center;
-  }
-
-  &--rounded {
-    border-radius: 4px;
-  }
-
-  &--round {
-    border-radius: 1000px;
-  }
-
 }

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- build:css /css/style.min.css -->
     <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
-    <link rel="stylesheet" href="node_modules/suitcss-base/lib/base.css">
+    <!-- <link rel="stylesheet" href="node_modules/suitcss-base/lib/base.css"> -->
     <link rel="stylesheet" href="tmp/css/style.css">
     <!-- endbuild -->
   </head>
@@ -23,7 +23,7 @@
     <main class="l-region-main">
       <div class="l-container l-container--align-right--bp-small l-container--align-left--bp-medium l-container--align-centered--bp-large">
 
-        <h2>The grid</h2>
+        <h2>Grid</h2>
 
         <div class="l-grid__row l-grid__row--display">
           <div class="l-grid__col l-grid__col-2--bp-small">
@@ -98,7 +98,7 @@
           </div>
         </div>
 
-        <h2>The buttons</h2>
+        <h2>Buttons</h2>
 
         <h3>States</h3>
         <a href="#button" class="button">Default</a>
@@ -115,11 +115,32 @@
         <a href="#button" class="button button--rounded">Rounded</a>
         <a href="#button" class="button button--round">Round</a>
 
-        <h3>Sizing</h3>
+        <h3>Scales</h3>
+        <a href="#button" class="button button--scale-xsmall">Extra Small</a>
+        <a href="#button" class="button button--scale-small">Small</a>
+        <a href="#button" class="button">Default</a>
+        <a href="#button" class="button button--scale-large">Large</a>
+        <a href="#button" class="button button--scale-xlarge">Extra Large</a>
+        <a href="#button" class="button button--scale-xxlarge">Extra Extra Large</a>
+
+        <h3>Sizes</h3>
+        <a href="#button" class="button button--size-xsmall">Extra Small</a>
         <a href="#button" class="button button--size-small">Small</a>
+        <a href="#button" class="button">Default</a>
         <a href="#button" class="button button--size-large">Large</a>
         <a href="#button" class="button button--size-xlarge">Extra Large</a>
-        <a href="#button" class="button button--size-full-width">Full Width</a>
+        <a href="#button" class="button button--size-xxlarge">Extra Extra Large</a>
+
+        <h3>Widths</h3>
+        <p>
+          <a href="#button" class="button button--width-auto">Auto</a>
+        </p>
+        <p>
+        <a href="#button" class="button button--width-half">Half</a>
+        </p>
+        <p>
+        <a href="#button" class="button button--width-full">Full</a>
+        </p>
 
       </div>
 
@@ -132,7 +153,7 @@
     </footer>
 
     <!-- build:js /js/script.min.js -->
-    <script src="src/core/modules/core-module/core-module.js"></script>
+    <script src="src/core/modules/buttons/buttons.js"></script>
     <script src="src/custom/modules/custom-module/custom-module.js"></script>
     <!-- endbuild -->
   </body>

@@ -1,2 +1,30 @@
 // Core / Modules / Buttons / Settings
 
+$button-padding--v: .5em;
+$button-padding--h: 1em;
+$button-bg-color: $grey--200;
+$button-bg-color--hover: $grey--300;
+$button-bg-color--active: $grey--400;
+$button-color: inherit;
+$button-color--hover: $button-color;
+$button-color--active: $button-color;
+$button-text-align: center;
+$button-text-decoration: none;
+$button-opacity--disabled: .4;
+
+// Actions
+$button-action-bg-color: $purple;
+$button-action-bg-color--hover: $purple--600;
+$button-action-bg-color--active: $purple--700;
+$button-action-color: $white;
+$button-action-color--hover: $button-action-color;
+$button-action-color--active: $button-action-color;
+
+// Roundness
+$button-roundness: 4px;
+
+// Width
+$button-width: auto;
+
+// Presentational Classes
+$button-classes: true;
