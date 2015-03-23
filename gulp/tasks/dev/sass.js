@@ -23,7 +23,6 @@ gulp.task('sass', function() {
     }))
     .pipe(please({
       "autoprefixer": { "browsers": ["last 2 versions"] },
-      "mqpacker": true,
       "minifier": false
     }))
     .pipe(sourcemaps.write())
