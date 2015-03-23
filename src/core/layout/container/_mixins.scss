@@ -1,13 +1,61 @@
-@mixin container-gutter($gutter: $container-gutter) {
+// Layout / Container / Mixins
+
+// Gutter
+@mixin container-gutter($gutter: $container-gutter, $gutter-bp: $container-gutter-bp, $bp: true) {
   padding-right: $gutter;
   padding-left: $gutter;
+
+  @if($bp--enabled == true and $bp == true) {
+    // loop through each breakpoint
+    @each $bp-name, $bp-value in $bp-map {
+      // set container gutter
+      @include bp($bp-value) {
+        // @include container-gutter(map-get($gutter-bp, $bp-name));
+        $gutter: map-get($gutter-bp, $bp-name);
+        padding-right: $gutter;
+        padding-left: $gutter;
+      }
+    }
+  }
 }
 
-@mixin container-max-width($width: $container-max-width) {
-  max-width: $width;
+
+@mixin container-gutter-classes($gutter: $container-gutter, $gutter-bp: $container-gutter-bp, $bp: false) {
+  @include container-gutter($gutter, $gutter-bp, $bp);
 }
 
-@mixin container-align($align: $container-align) {
+
+
+
+
+// Max Width
+@mixin container-max-width($max-width: $container-max-width, $max-width-bp: $container-max-width-bp, $bp: true) {
+  max-width: $max-width;
+
+  @if($bp--enabled == true and $bp == true) {
+    // loop through each breakpoint
+    @each $bp-name, $bp-value in $bp-map {
+      // set container gutter
+      @include bp($bp-value) {
+        // @include container-max-width($max-width);
+        $max-width: map-get($max-width-bp, $bp-name);
+        max-width: $max-width;
+      }
+    }
+  }
+}
+
+
+@mixin container-max-width-classes($max-width: $container-max-width, $max-width-bp: $container-max-width-bp, $bp: false) {
+  @include container-max-width($max-width, $max-width-bp, $bp)
+}
+
+
+
+
+
+// Align
+@mixin container-align($align: $container-align, $align-bp: $container-align-bp, $bp: true) {
   @if($align == center) {
     margin-right: auto;
     margin-left: auto;
@@ -20,83 +68,33 @@
     margin-right: auto;
     margin-left: 0;
   }
-}
 
-@mixin container(
-  $size: null,
-  $gutter: $container-gutter,
-  $gutter-bp: $container-gutter-bp,
-  $max-width: $container-max-width,
-  $max-width-bp: $container-max-width-bp,
-  $align: $container-align,
-  $align-bp: $container-align-bp) {
-
-  // set container gutter
-  @include container-gutter($gutter);
-
-  // set container max width
-  @include container-max-width($max-width);
-
-  @if($container-classes == false) {
-    // align the container
-    @include container-align($align);
-  }
-
-  @if($bp--enabled == true) {
+  @if($bp--enabled == true and $bp == true) {
     // loop through each breakpoint
     @each $bp-name, $bp-value in $bp-map {
       // set container gutter
       @include bp($bp-value) {
-        @include container-gutter(map-get($gutter-bp, $bp-name));
+        // @include container-align(map-get($align-bp, $bp-name));
+        $align: map-get($align-bp, $bp-name);
 
-        // set container constrained max width
-        @include container-max-width(map-get($max-width-bp, $bp-name));
+        @if($align == center) {
+          margin-right: auto;
+          margin-left: auto;
 
-        @if($container-classes == false) {
-          // set container constrained alignment
-          @include container-align(map-get($align-bp, $bp-name));
+        } @elseif($align == right) {
+          margin-right: 0;
+          margin-left: auto;
+
+        } @elseif($align == left) {
+          margin-right: auto;
+          margin-left: 0;
         }
       }
     }
   }
 }
 
-@mixin container-classes($bp: null) {
-  @if($container-classes == true) {
-    .l-container {
-      @if($bp == null) {
-        @include container();
-      }
 
-      @if($bp == null) {
-        // Centered, Left, Right
-        &--align-centered {
-          @include container-align(center);
-        }
-
-        &--align-left {
-          @include container-align(left);
-        }
-
-        &--align-right {
-          @include container-align(right);
-        }
-      }
-
-      @if($bp and $bp--enabled == true) {
-        // Centered, Left, Right - Responsive
-        &--align-centered--bp-#{$bp} {
-          @include container-align(center);
-        }
-
-        &--align-left--bp-#{$bp} {
-          @include container-align(left);
-        }
-
-        &--align-right--bp-#{$bp} {
-          @include container-align(right);
-        }
-      }
-    }
-  }
+@mixin container-align-classes($align: $container-align, $align-bp: $container-align-bp, $bp: false) {
+  @include container-align($align, $align-bp, $bp);
 }

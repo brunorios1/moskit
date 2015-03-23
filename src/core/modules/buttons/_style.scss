@@ -9,15 +9,15 @@
     }
 
     &--action-positive {
-      @include button-action($bg-color: $green, $bg-color--hover: $green--600, $bg-color--active: $green--700);
+      @include button-action($bg-color: $button-action-positive-bg-color, $bg-color--hover: $button-action-positive-bg-color--hover, $bg-color--active: $button-action-positive-bg-color--active);
     }
 
     &--action-negative {
-      @include button-action($bg-color: $red, $bg-color--hover: $red--600, $bg-color--active: $red--700);
+      @include button-action($bg-color: $button-action-negative-bg-color, $bg-color--hover: $button-action-negative-bg-color--hover, $bg-color--active: $button-action-negative-bg-color--active);
     }
 
     &--action-warning {
-      @include button-action($bg-color: $amber, $bg-color--hover: $amber--600, $bg-color--active: $amber--700);
+      @include button-action($bg-color: $button-action-warning-bg-color, $bg-color--hover: $button-action-warning-bg-color--hover, $bg-color--active: $button-action-warning-bg-color--active);
     }
 
     // modular scale - 5:6 - minor third

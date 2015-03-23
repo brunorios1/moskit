@@ -13,12 +13,33 @@ $button-text-decoration: none;
 $button-opacity--disabled: .4;
 
 // Actions
-$button-action-bg-color: $purple;
-$button-action-bg-color--hover: $purple--600;
-$button-action-bg-color--active: $purple--700;
-$button-action-color: $white;
-$button-action-color--hover: $button-action-color;
-$button-action-color--active: $button-action-color;
+$button-action-primary-bg-color: $purple--400;
+$button-action-primary-bg-color--hover: $purple--500;
+$button-action-primary-bg-color--active: $purple--600;
+$button-action-primary-color: $white;
+$button-action-primary-color--hover: $button-action-primary-color;
+$button-action-primary-color--active: $button-action-primary-color;
+
+$button-action-positive-bg-color: $green--400;
+$button-action-positive-bg-color--hover: $green--500;
+$button-action-positive-bg-color--active: $green--600;
+$button-action-positive-color: $white;
+$button-action-positive-color--hover: $button-action-positive-color;
+$button-action-positive-color--active: $button-action-positive-color;
+
+$button-action-negative-bg-color: $red--400;
+$button-action-negative-bg-color--hover: $red--500;
+$button-action-negative-bg-color--active: $red--600;
+$button-action-negative-color: $white;
+$button-action-negative-color--hover: $button-action-negative-color;
+$button-action-negative-color--active: $button-action-negative-color;
+
+$button-action-warning-bg-color: $amber--400;
+$button-action-warning-bg-color--hover: $amber--500;
+$button-action-warning-bg-color--active: $amber--600;
+$button-action-warning-color: $white;
+$button-action-warning-color--hover: $button-action-warning-color;
+$button-action-warning-color--active: $button-action-warning-color;
 
 // Roundness
 $button-roundness: 4px;

@@ -1,42 +1,39 @@
-// Container
+// Layout / Container / Settings
 
-// Settings
-
-// Constrained Container Max Width
-// fixed value or percentage
+// Max width
 $container-max-width: 100%;
 $container-max-width-bp: (
-  small: 80%,
-  medium: 80%,
+  small: 100%,
+  medium: 100%,
   large: 80%,
   xlarge: 80%,
   xxlarge: 80%,
   xxxlarge: 80%
 );
 
-// Constrained Container Alignment
+// Alignment
 // center, left or right
 $container-align: center;
 $container-align-bp: (
-  small: left,
-  medium: right,
-  large: left,
+  small: center,
+  medium: center,
+  large: center,
   xlarge: center,
   xxlarge: center,
   xxxlarge: center
 );
 
-// Container Gutter
+// Gutter
 $container-gutter: rem(20);
 $container-gutter-bp: (
   small: rem(20),
-  medium: 0,
+  medium: rem(20),
   large: 0,
   xlarge: 0,
   xxlarge: 0,
   xxxlarge: 0
 );
 
-// Presentational container classes
+// Presentational classes
 // boolean
 $container-classes: true;

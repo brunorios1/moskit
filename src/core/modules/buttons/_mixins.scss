@@ -45,12 +45,12 @@ $opacity--disabled: $button-opacity--disabled) {
 }
 
 @mixin button-action(
-$bg-color: $button-action-bg-color,
-$bg-color--hover: $button-action-bg-color--hover,
-$bg-color--active: $button-action-bg-color--active,
-$color: $button-action-color,
-$color--hover: $button-action-color,
-$color--active: $button-action-color) {
+$bg-color: $button-action-primary-bg-color,
+$bg-color--hover: $button-action-primary-bg-color--hover,
+$bg-color--active: $button-action-primary-bg-color--active,
+$color: $button-action-primary-color,
+$color--hover: $button-action-primary-color,
+$color--active: $button-action-primary-color) {
   color: $color;
 
   &,
