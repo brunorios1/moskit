@@ -5,19 +5,75 @@
     @include button();
 
     &--action-primary {
-      @include button-action();
+      @include button--action(
+        $padding--h: $button--action-primary__padding--h,
+        $padding--v: $button--action-primary__padding--v,
+        $bg-color: $button--action-primary__bg-color,
+        $bg-color--hover: $button--action-primary__bg-color--hover,
+        $bg-color--active: $button--action-primary__bg-color--active,
+        $color: $button--action-primary__color,
+        $color--hover: $button--action-primary__color--hover,
+        $color--active: $button--action-primary__color--active,
+        $text-align: $button--action-primary__text-align,
+        $text-decoration: $button--action-primary__text-decoration,
+        $border-width: $button--action-primary__border-width,
+        $border-style: $button--action-primary__border-style,
+        $border-color: $button--action-primary__border-color
+      );
     }
 
     &--action-positive {
-      @include button-action($bg-color: $button-action-positive-bg-color, $bg-color--hover: $button-action-positive-bg-color--hover, $bg-color--active: $button-action-positive-bg-color--active);
+      @include button--action(
+        $padding--h: $button--action-positive__padding--h,
+        $padding--v: $button--action-positive__padding--v,
+        $bg-color: $button--action-positive__bg-color,
+        $bg-color--hover: $button--action-positive__bg-color--hover,
+        $bg-color--active: $button--action-positive__bg-color--active,
+        $color: $button--action-positive__color,
+        $color--hover: $button--action-positive__color--hover,
+        $color--active: $button--action-positive__color--active,
+        $text-align: $button--action-positive__text-align,
+        $text-decoration: $button--action-positive__text-decoration,
+        $border-width: $button--action-positive__border-width,
+        $border-style: $button--action-positive__border-style,
+        $border-color: $button--action-positive__border-color
+      );
     }
 
     &--action-negative {
-      @include button-action($bg-color: $button-action-negative-bg-color, $bg-color--hover: $button-action-negative-bg-color--hover, $bg-color--active: $button-action-negative-bg-color--active);
+      @include button--action(
+        $padding--h: $button--action-negative__padding--h,
+        $padding--v: $button--action-negative__padding--v,
+        $bg-color: $button--action-negative__bg-color,
+        $bg-color--hover: $button--action-negative__bg-color--hover,
+        $bg-color--active: $button--action-negative__bg-color--active,
+        $color: $button--action-negative__color,
+        $color--hover: $button--action-negative__color--hover,
+        $color--active: $button--action-negative__color--active,
+        $text-align: $button--action-negative__text-align,
+        $text-decoration: $button--action-negative__text-decoration,
+        $border-width: $button--action-negative__border-width,
+        $border-style: $button--action-negative__border-style,
+        $border-color: $button--action-negative__border-color
+      );
     }
 
     &--action-warning {
-      @include button-action($bg-color: $button-action-warning-bg-color, $bg-color--hover: $button-action-warning-bg-color--hover, $bg-color--active: $button-action-warning-bg-color--active);
+      @include button--action(
+        $padding--h: $button--action-warning__padding--h,
+        $padding--v: $button--action-warning__padding--v,
+        $bg-color: $button--action-warning__bg-color,
+        $bg-color--hover: $button--action-warning__bg-color--hover,
+        $bg-color--active: $button--action-warning__bg-color--active,
+        $color: $button--action-warning__color,
+        $color--hover: $button--action-warning__color--hover,
+        $color--active: $button--action-warning__color--active,
+        $text-align: $button--action-warning__text-align,
+        $text-decoration: $button--action-warning__text-decoration,
+        $border-width: $button--action-warning__border-width,
+        $border-style: $button--action-warning__border-style,
+        $border-color: $button--action-warning__border-color
+      );
     }
 
     // modular scale - 5:6 - minor third
@@ -43,43 +99,43 @@
 
     // modular scale - 3:4 - perfect fourth
     &--size-xsmall {
-      padding: ($button-padding--v * .563) ($button-padding--h * .563);
+      padding: ($button__padding--v * .563) ($button__padding--h * .563);
     }
 
     &--size-small {
-      padding: ($button-padding--v * .75) ($button-padding--h * .75);
+      padding: ($button__padding--v * .75) ($button__padding--h * .75);
     }
 
     &--size-large {
-      padding: ($button-padding--v * 1.333) ($button-padding--h * 1.333);
+      padding: ($button__padding--v * 1.333) ($button__padding--h * 1.333);
     }
 
     &--size-xlarge {
-      padding: ($button-padding--v * 1.777) ($button-padding--h * 1.777);
+      padding: ($button__padding--v * 1.777) ($button__padding--h * 1.777);
     }
 
     &--size-xxlarge {
-      padding: ($button-padding--v * 2.369) ($button-padding--h * 2.369);
+      padding: ($button__padding--v * 2.369) ($button__padding--h * 2.369);
     }
 
     &--width-auto {
-      @include button-width(auto);
+      @include button--width(auto);
     }
 
     &--width-half {
-      @include button-width(half);
+      @include button--width(half);
     }
 
     &--width-full {
-      @include button-width(full);
+      @include button--width(full);
     }
 
     &--rounded {
-      @include button-roundness();
+      @include button--roundness();
     }
 
     &--round {
-      @include button-roundness(round);
+      @include button--roundness(round);
     }
   }
 }

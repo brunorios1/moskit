@@ -1,26 +1,39 @@
 // Core / Modules / Buttons / Mixins
 
 @mixin button(
-$padding--h: $button-padding--h,
-$padding--v: $button-padding--v,
-$bg-color: $button-bg-color,
-$bg-color--hover: $button-bg-color--hover,
-$bg-color--active: $button-bg-color--active,
-$color: $button-color,
-$color--hover: $button-color,
-$color--active: $button-color,
-$text-align: $button-text-align,
-$text-decoration: $button-text-decoration,
-$opacity--disabled: $button-opacity--disabled) {
-  display: inline-block;
-  padding-top: $padding--v;
-  padding-right: $padding--h;
-  padding-bottom: $padding--v;
-  padding-left: $padding--h;
+$display: inline-block,
+$padding--h: $button__padding--h,
+$padding--v: $button__padding--v,
+$bg-color: $button__bg-color,
+$bg-color--hover: $button__bg-color--hover,
+$bg-color--active: $button__bg-color--active,
+$color: $button__color,
+$color--hover: $button__color,
+$color--active: $button__color,
+$text-align: $button__text-align,
+$text-decoration: $button__text-decoration,
+$border-width: $button__border-width,
+$border-style: $button__border-style,
+$border-color: $button__border-color,
+$opacity--disabled: $button__opacity--disabled) {
+  display: $display;
+  padding: {
+    top: $padding--v;
+    right: $padding--h;
+    bottom: $padding--v;
+    left: $padding--h;
+  }
   background-color: $bg-color;
   color: $color;
-  text-align: $text-align;
-  text-decoration: $text-decoration;
+  text: {
+    align: $text-align;
+    decoration: $text-decoration;
+  }
+  border: {
+    width: $border-width;
+    style: $border-style;
+    color: $border-color;
+  }
 
   &:hover {
     background-color: $bg-color--hover;
@@ -44,35 +57,42 @@ $opacity--disabled: $button-opacity--disabled) {
   }
 }
 
-@mixin button-action(
-$bg-color: $button-action-primary-bg-color,
-$bg-color--hover: $button-action-primary-bg-color--hover,
-$bg-color--active: $button-action-primary-bg-color--active,
-$color: $button-action-primary-color,
-$color--hover: $button-action-primary-color,
-$color--active: $button-action-primary-color) {
-  color: $color;
-
-  &,
-  &.is-disabled:hover,
-  &.is-disabled:active {
-    background-color: $bg-color;
-    color: $color;
-  }
-
-  &:hover {
-    background-color: $bg-color--hover;
-    color: $color--hover;
-  }
-
-  &:active,
-  &.is-active {
-    background-color: $bg-color--active;
-    color: $color--active;
-  }
+@mixin button--action(
+$display: null,
+$padding--h: $button__padding--h,
+$padding--v: $button__padding--v,
+$bg-color: $button__bg-color,
+$bg-color--hover: $button__bg-color--hover,
+$bg-color--active: $button__bg-color--active,
+$color: $button__color,
+$color--hover: $button__color,
+$color--active: $button__color,
+$text-align: $button__text-align,
+$text-decoration: $button__text-decoration,
+$border-width: $button__border-width,
+$border-style: $button__border-style,
+$border-color: $button__border-color,
+$opacity--disabled: $button__opacity--disabled) {
+  @include button(
+    $display,
+    $padding--h,
+    $padding--v,
+    $bg-color,
+    $bg-color--hover,
+    $bg-color--active,
+    $color,
+    $color--hover,
+    $color--active,
+    $text-align,
+    $text-decoration,
+    $border-width,
+    $border-style,
+    $border-color,
+    $opacity--disabled
+  )
 }
 
-@mixin button-roundness($roundness: $button-roundness) {
+@mixin button--roundness($roundness: $button-roundness) {
   @if($roundness == round) {
     border-radius: 1000px;
   } @else {
@@ -80,13 +100,16 @@ $color--active: $button-action-primary-color) {
   }
 }
 
-@mixin button-width($width: $button-width) {
+@mixin button--width($width: $button-width) {
   @if($width == auto) {
     width: auto;
+
   } @elseif($width == half) {
     width: 50%;
+
   } @elseif($width == full) {
     width: 100%;
+
   } @else {
     width: $width;
   }
