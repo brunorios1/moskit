@@ -11,10 +11,6 @@ var config = require('../../config').sass.dev;
 // Sass
 gulp.task('sass', function() {
   var stream = gulp.src(config.src)
-    // lint scss code
-    .pipe(scsslint({
-      'bundleExec': true
-    }))
     .pipe(sourcemaps.init())
     // compile .scss to .css
     .pipe(sass({

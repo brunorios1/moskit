@@ -32,10 +32,6 @@
       @include container-gutter-classes(rem(50px));
     }
 
-    &--align-right {
-      @include container-align-classes(right);
-    }
-
     // Centered, Left, Right
     &--align-centered {
       @include container-align-classes(center);
@@ -178,10 +174,11 @@
         }
       }
     }
+
     &--display {
+      margin-bottom: 10px;
       background-color: $grey--100;
       line-height: 3em;
-      margin-bottom: 10px;
     }
   }
 }

@@ -16,6 +16,10 @@ module.exports = {
     }
   },
 
+  scsslint: {
+    src: paths.styles
+  },
+
   sass: {
     dev: {
       src: paths.styles,
