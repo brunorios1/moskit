@@ -1,2 +1,12 @@
+// Layout / Sticky Footer / Settings
+
 $sticky-footer-height: rem(60);
+$sticky-footer-height--bp: (
+  small: rem(60),
+  medium: rem(90),
+  large: rem(120),
+  xlarge: rem(150),
+  xxlarge: rem(180),
+  xxxlarge: rem(210)
+);
 $sticky-footer-class: l-region-footer;
