@@ -12,9 +12,9 @@ gulp.task('html', ['sass:live'], function () {
 
   var stream = gulp.src(config.src)
     .pipe(assets)
-      // Concatenates and minifies JS
-    .pipe(gulpif('*.js', uglify()))
     // Concatenates and minifies JS
+    .pipe(gulpif('*.js', uglify()))
+    // Concatenates and minifies CSS
     .pipe(gulpif('*.css', please({
       "autoprefixer": { "browsers": ["last 2 versions"] }
     })))

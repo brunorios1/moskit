@@ -1,14 +1,18 @@
+// Core Overrides
+@import 'settings';
+
+
+
+
+
+
+
 // --------------------
 // #CORE
 // --------------------
 
-// Base - Normalize.css
-// @import '/node_modules/normalize.css/normalize.css';
-
-
-// Base - SUIT-CSS base
-// @import '/node_modules/suitcss-base/lib/base.css';
-
+// Sanitize.css
+@import '../../node_modules/sanitize.css/sanitize';
 
 // Base - All
 @import '../core/base/all';
@@ -120,13 +124,6 @@
 // --------------------
 // #CUSTOM
 // --------------------
-
-// Core Settings Overrides
-@import 'settings';
-
-
-
-
 
 // Base
 // @import 'base/all';
