@@ -7,27 +7,27 @@ html {
 }
 
 body {
-  margin-bottom: $sticky-footer-height;
+  margin-bottom: $sticky-footer__height;
 }
 
-.#{$sticky-footer-class} {
+.#{$sticky-footer__class} {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: $sticky-footer-height;
+  height: $sticky-footer__height;
 }
 
 // loop through each breakpoint
 @each $bp-name, $bp-value in $bp-map {
-  $footer__height: map-get($sticky-footer-height--bp, $bp-name);
+  $footer__height: map-get($sticky-footer__height--bp, $bp-name);
 
   @include bp($bp-value) {
     body {
       margin-bottom: $footer__height;
     }
 
-    .#{$sticky-footer-class} {
+    .#{$sticky-footer__class} {
       height: $footer__height;
     }
   }

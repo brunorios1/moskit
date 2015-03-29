@@ -3,12 +3,12 @@
 // Settings
 
 // Breakpoints
-$bp-small:    em(480);
-$bp-medium:   em(768);
-$bp-large:    em(1024);
-$bp-xlarge:   em(1366);
-$bp-xxlarge:  em(1600);
-$bp-xxxlarge: em(1920);
+$bp-small:    em(480) !default;
+$bp-medium:   em(768) !default;
+$bp-large:    em(1024) !default;
+$bp-xlarge:   em(1366) !default;
+$bp-xxlarge:  em(1600) !default;
+$bp-xxxlarge: em(1920) !default;
 
 $bp-map: (
   small:    $bp-small,
@@ -17,6 +17,6 @@ $bp-map: (
   xlarge:   $bp-xlarge,
   xxlarge:  $bp-xxlarge,
   xxxlarge: $bp-xxxlarge
-);
+) !default;
 
 $bp--enabled: true;

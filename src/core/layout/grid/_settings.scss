@@ -4,8 +4,8 @@
 
 // Settings
 
-$grid__columns: 12;
-$grid__gutter: 20;
+$grid__columns: 12 !default;
+$grid__gutter: 20 !default;
 
 // Presentational classes
-$grid-classes: true;
+$grid-classes: true !default;

@@ -1,7 +1,7 @@
 // Layout / Container / Settings
 
 // Max width
-$container__max-width: 100%;
+$container__max-width: 100% !default;
 $container__max-width--bp: (
   small: 100%,
   medium: 100%,
@@ -9,11 +9,11 @@ $container__max-width--bp: (
   xlarge: 80%,
   xxlarge: 80%,
   xxxlarge: 80%
-);
+) !default;
 
 // Alignment
 // center, left or right
-$container__align: center;
+$container__align: center !default;
 $container__align--bp: (
   small: center,
   medium: center,
@@ -21,10 +21,10 @@ $container__align--bp: (
   xlarge: center,
   xxlarge: center,
   xxxlarge: center
-);
+) !default;
 
 // Gutter
-$container__gutter: rem(20);
+$container__gutter: rem(20) !default;
 $container__gutter--bp: (
   small: rem(20),
   medium: rem(20),
@@ -32,8 +32,8 @@ $container__gutter--bp: (
   xlarge: 0,
   xxlarge: 0,
   xxxlarge: 0
-);
+) !default;
 
 // Presentational classes
 // boolean
-$container-classes: true;
+$container-classes: true !default;
