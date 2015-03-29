@@ -278,6 +278,7 @@ $deep-orange--a100: nth($palette__deep-orange, 11);
 $deep-orange--a200: nth($palette__deep-orange, 12);
 $deep-orange--a400: nth($palette__deep-orange, 13);
 $deep-orange--a700: nth($palette__deep-orange, 14);
+$deep-orange: $deep-orange--500;
 
 $brown--50:   nth($palette__brown, 1);
 $brown--100:  nth($palette__brown, 2);
@@ -289,6 +290,7 @@ $brown--600:  nth($palette__brown, 7);
 $brown--700:  nth($palette__brown, 8);
 $brown--800:  nth($palette__brown, 9);
 $brown--900:  nth($palette__brown, 10);
+$brown: $brown--500;
 
 $grey--50:   nth($palette__grey, 1);
 $grey--100:  nth($palette__grey, 2);
@@ -300,6 +302,7 @@ $grey--600:  nth($palette__grey, 7);
 $grey--700:  nth($palette__grey, 8);
 $grey--800:  nth($palette__grey, 9);
 $grey--900:  nth($palette__grey, 10);
+$grey: $grey--500;
 
 $blue-grey--50:   nth($palette__blue-grey, 1);
 $blue-grey--100:  nth($palette__blue-grey, 2);
@@ -311,3 +314,4 @@ $blue-grey--600:  nth($palette__blue-grey, 7);
 $blue-grey--700:  nth($palette__blue-grey, 8);
 $blue-grey--800:  nth($palette__blue-grey, 9);
 $blue-grey--900:  nth($palette__blue-grey, 10);
+$blue-grey: $blue-grey--500;
