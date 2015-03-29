@@ -4,27 +4,138 @@
 
 // Styles
 
-// Generates l-grid-[n], l-grid-offset-[n] and other classes dynamically based
+// Generates l-grid-[n], l-grid__offset-[n] and other classes dynamically based
 // on number of columns
 @if($grid-classes == true) {
 
   // generate column classes
-  @include grid-classes();
+  // Row
+  .l-grid__row {
+    @include grid__row();
+  }
+
+  // Columns
+  .l-grid__col {
+    @include grid__column($grid__columns);
+    padding-right: rem($grid__gutter / 2);
+    padding-left: rem($grid__gutter / 2);
+    float: left;
+  }
+
+  // Offset, push and pull resets
+  .l-grid__col--offset-reset {
+    margin-left: 0;
+  }
+
+  .l-grid__col--push-reset {
+    left: auto;
+  }
+
+  .l-grid__col--pull-reset {
+    right: auto;
+  }
+
+  // Centered, Left, Right Columns
+  .l-grid__col--align-centered {
+    @include grid__align(center);
+  }
+
+  .l-grid__col--align-right {
+    @include grid__align(right);
+  }
+
+  .l-grid__col--align-left {
+    @include grid__align(left);
+  }
+
+  @for $i from 1 through $grid__columns {
+    // Generates column classes
+    // .l-grid-[n]
+    .l-grid__col-#{$i} {
+      @include grid__column($columns: $i);
+    }
+
+    // Generates column offset classes
+    // .l-grid__col--offset-[n]
+    .l-grid__col--offset-#{$i} {
+      @include grid__offset($columns: $i);
+    }
+
+    // Generates column push classes
+    // .l-grid__col--push-[n]
+    .l-grid__col--push-#{$i} {
+      @include grid__push($columns: $i);
+    }
+
+    // Generates column push classes
+    // .l-grid__col--pull-[n]
+    .l-grid__col--pull-#{$i} {
+      @include grid__pull($columns: $i);
+    }
+  }
 
   // Generates responsive l-grid-[breakpoint]-[n], l-grid-[breakpoint]-offset-[n]
   // and other classes based on number of columns
   @if($bp--enabled == true) {
     @each $bp-name, $bp-value in $bp-map {
       @include bp($bp-value) {
-        @include grid-classes($bp-name);
+        // Offset, push and pull resets
+        .l-grid__col--offset-reset--bp-#{$bp-name} {
+          margin-left: 0;
+        }
+
+        .l-grid__col--push-reset--bp-#{$bp-name} {
+          left: auto;
+        }
+
+        .l-grid__col--pull-reset--bp-#{$bp-name} {
+          right: auto;
+        }
+
+        // Centered, Left and Right alignments
+        .l-grid__col--align-centered--bp-#{$bp-name} {
+          @include grid__align(center);
+        }
+
+        .l-grid__col--align-left--bp-#{$bp-name} {
+          @include grid__align(left);
+        }
+
+        .l-grid__col--align-right--bp-#{$bp-name} {
+          @include grid__align(right);
+        }
+
+        @for $i from 1 through $grid__columns {
+          // Generates responsive column classes
+          // .l-grid__col-[n]--[breakpoint]
+          .l-grid__col-#{$i}--bp-#{$bp-name} {
+            @include grid__column($columns: $i);
+          }
+
+          // Generates responsive column offset classes
+          // .l-grid__col--offset-[n]--[breakpoint]
+          .l-grid__col--offset-#{$i}--bp-#{$bp-name} {
+            @include grid__offset($columns: $i);
+          }
+
+          // Generates responsive column offset classes
+          // .l-grid__col-push-[n]--[breakpoint]
+          .l-grid__col--push-#{$i}--bp-#{$bp-name} {
+            @include grid__push($columns: $i);
+          }
+
+          // Generates responsive column offset classes
+          // .l-grid__col-pull-[n]--[breakpoint]
+          .l-grid__col--pull-#{$i}--bp-#{$bp-name} {
+            @include grid__pull($columns: $i);
+          }
+        }
       }
     }
   }
-}
 
-// TO-DO
-// move this to the demonstration site in the future
-@if($grid-classes == true) {
+  // TO-DO
+  // move this to the demonstration site in the future
   .l-grid__row {
     &--display {
       margin-right: 0;
