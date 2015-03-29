@@ -1,7 +1,7 @@
 // Layout / Container / Mixins
 
 // Gutter
-@mixin container-gutter($gutter: $container-gutter, $gutter-bp: $container-gutter-bp, $bp: true) {
+@mixin container__gutter($gutter: $container-gutter, $gutter-bp: $container-gutter-bp, $bp: true) {
   padding-right: $gutter;
   padding-left: $gutter;
 
@@ -20,8 +20,8 @@
 }
 
 
-@mixin container-gutter-classes($gutter: $container-gutter, $gutter-bp: $container-gutter-bp, $bp: false) {
-  @include container-gutter($gutter, $gutter-bp, $bp);
+@mixin container__gutter--classes($gutter: $container__gutter, $gutter--bp: $container__gutter--bp, $bp: false) {
+  @include container__gutter($gutter, $gutter--bp, $bp);
 }
 
 
@@ -29,7 +29,7 @@
 
 
 // Max Width
-@mixin container-max-width($max-width: $container-max-width, $max-width-bp: $container-max-width-bp, $bp: true) {
+@mixin container__max-width($max-width: $container__max-width, $max-width--bp: $container__max-width--bp, $bp: true) {
   max-width: $max-width;
 
   @if($bp--enabled == true and $bp == true) {
@@ -38,7 +38,7 @@
       // set container gutter
       @include bp($bp-value) {
         // @include container-max-width($max-width);
-        $max-width: map-get($max-width-bp, $bp-name);
+        $max-width: map-get($max-width--bp, $bp-name);
         max-width: $max-width;
       }
     }
@@ -46,8 +46,8 @@
 }
 
 
-@mixin container-max-width-classes($max-width: $container-max-width, $max-width-bp: $container-max-width-bp, $bp: false) {
-  @include container-max-width($max-width, $max-width-bp, $bp)
+@mixin container__max-width--classes($max-width: $container__max-width, $max-width--bp: $container__max-width--bp, $bp: false) {
+  @include container__max-width($max-width, $max-width--bp, $bp)
 }
 
 
@@ -55,7 +55,7 @@
 
 
 // Align
-@mixin container-align($align: $container-align, $align-bp: $container-align-bp, $bp: true) {
+@mixin container__align($align: $container__align, $align--bp: $container__align--bp, $bp: true) {
   @if($align == center) {
     margin-right: auto;
     margin-left: auto;
@@ -75,7 +75,7 @@
       // set container gutter
       @include bp($bp-value) {
         // @include container-align(map-get($align-bp, $bp-name));
-        $align: map-get($align-bp, $bp-name);
+        $align: map-get($align--bp, $bp-name);
 
         @if($align == center) {
           margin-right: auto;
@@ -95,6 +95,20 @@
 }
 
 
-@mixin container-align-classes($align: $container-align, $align-bp: $container-align-bp, $bp: false) {
-  @include container-align($align, $align-bp, $bp);
+@mixin container__align--classes($align: $container__align, $align-bp: $container__align--bp, $bp: false) {
+  @include container__align($align, $align-bp, $bp);
+}
+
+
+@mixin container(
+$gutter: $container__gutter,
+$gutter--bp: $container__gutter--bp,
+$max-width: $container__max-width,
+$max-width--bp: $container__max-width--bp,
+$align: $container__align,
+$align--bp: $container__align--bp,
+$bp: true) {
+  @include container__gutter($gutter, $gutter--bp, $bp);
+  @include container__max-width($max-width, $max-width--bp, $bp);
+  @include container__align($align, $align--bp, $bp);
 }

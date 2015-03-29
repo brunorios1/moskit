@@ -1,8 +1,8 @@
 // Layout / Container / Settings
 
 // Max width
-$container-max-width: 100%;
-$container-max-width-bp: (
+$container__max-width: 100%;
+$container__max-width--bp: (
   small: 100%,
   medium: 100%,
   large: 80%,
@@ -13,8 +13,8 @@ $container-max-width-bp: (
 
 // Alignment
 // center, left or right
-$container-align: center;
-$container-align-bp: (
+$container__align: center;
+$container__align--bp: (
   small: center,
   medium: center,
   large: center,
@@ -24,8 +24,8 @@ $container-align-bp: (
 );
 
 // Gutter
-$container-gutter: rem(20);
-$container-gutter-bp: (
+$container__gutter: rem(20);
+$container__gutter--bp: (
   small: rem(20),
   medium: rem(20),
   large: 0,

@@ -1,5 +1,6 @@
 // Base / Abstract / Breakpoints / Mixins
 
+// Breakpoint
 @mixin bp($mq) {
   @media (min-width: $mq) {
     @content;
