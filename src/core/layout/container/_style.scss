@@ -12,6 +12,10 @@
     @include container-align-classes($bp: true);
 
     // Predefined gutter classes
+    &--gutter-0 {
+      @include container-gutter-classes(0);
+    }
+
     &--gutter-10 {
       @include container-gutter-classes(rem(10px));
     }
@@ -94,6 +98,10 @@
       @each $bp-name, $bp-value in $bp-map {
         @include bp($bp-value) {
           // Predefined gutter classes
+          &--gutter-0--bp-#{$bp-name} {
+            @include container-gutter-classes(0);
+          }
+
           &--gutter-10--bp-#{$bp-name} {
             @include container-gutter-classes(rem(10px));
           }
