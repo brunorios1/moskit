@@ -9,11 +9,32 @@
 // <body>
 // <footer>
 // <header>
-// <h1>
-// <h2>
-// <h3>
-// <h4>
-// <h5>
-// <h6>
+
+// Headings (<h1>-<h6>)
+// Modular Scale - 8:9 - Major Second
+h1 {
+  font-size: $h1__font-size;
+}
+
+h2 {
+  font-size: $h2__font-size;
+}
+
+h3 {
+  font-size: $h3__font-size;
+}
+
+h4 {
+  font-size: $h4__font-size;
+}
+
+h5 {
+  font-size: $h5__font-size;
+}
+
+h6 {
+  font-size: $h6__font-size;
+}
+
 // <nav>
 // <section>

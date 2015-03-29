@@ -1,5 +1,6 @@
 // Core / Modules / Buttons / Settings
 
+// Button
 $button__padding--v: .5em !default;
 $button__padding--h: 1em !default;
 $button__bg-color: #eee;
@@ -74,6 +75,22 @@ $button--action-warning__border-color: $button--action-warning__bg-color--hover 
 
 // Roundness
 $button--roundness__radius: 4px !default;
+
+// Scales
+$button--scale-xsmall: .694em !default;
+$button--scale-small: .833em !default;
+$button--scale-large: 1.2em !default;
+$button--scale-xlarge: 1.44em !default;
+$button--scale-xxlarge: 1.728em !default;
+$button--scale-xxxlarge: 2.074em !default;
+
+// Sizes
+$button--size-xsmall: .563 !default;
+$button--size-small: .75 !default;
+$button--size-large: 1.333 !default;
+$button--size-xlarge: 1.777 !default;
+$button--size-xxlarge: 2.369 !default;
+$button--size-xxxlarge: 3.157 !default;
 
 // Presentational Classes
 $button-classes: true !default;

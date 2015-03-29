@@ -78,44 +78,52 @@
 
     // modular scale - 5:6 - minor third
     &--scale-xsmall {
-      font-size: .694em;
+      font-size: $button--scale-xsmall;
     }
 
     &--scale-small {
-      font-size: .833em;
+      font-size: $button--scale-small;
     }
 
     &--scale-large {
-      font-size: 1.2em;
+      font-size: $button--scale-large;
     }
 
     &--scale-xlarge {
-      font-size: 1.44em;
+      font-size: $button--scale-xlarge;
     }
 
     &--scale-xxlarge {
-      font-size: 1.728em;
+      font-size: $button--scale-xxlarge;
+    }
+
+    &--scale-xxxlarge {
+      font-size: $button--scale-xxxlarge;
     }
 
     // modular scale - 3:4 - perfect fourth
     &--size-xsmall {
-      padding: ($button__padding--v * .563) ($button__padding--h * .563);
+      padding: ($button__padding--v * $button--size-xsmall) ($button__padding--h * $button--size-xsmall);
     }
 
     &--size-small {
-      padding: ($button__padding--v * .75) ($button__padding--h * .75);
+      padding: ($button__padding--v * $button--size-small) ($button__padding--h * $button--size-small);
     }
 
     &--size-large {
-      padding: ($button__padding--v * 1.333) ($button__padding--h * 1.333);
+      padding: ($button__padding--v * $button--size-large) ($button__padding--h * $button--size-large);
     }
 
     &--size-xlarge {
-      padding: ($button__padding--v * 1.777) ($button__padding--h * 1.777);
+      padding: ($button__padding--v * $button--size-xlarge) ($button__padding--h * $button--size-xlarge);
     }
 
     &--size-xxlarge {
-      padding: ($button__padding--v * 2.369) ($button__padding--h * 2.369);
+      padding: ($button__padding--v * $button--size-xxlarge) ($button__padding--h * $button--size-xxlarge);
+    }
+
+    &--size-xxxlarge {
+      padding: ($button__padding--v * $button--size-xxxlarge) ($button__padding--h * $button--size-xxxlarge);
     }
 
     &--width-auto {
