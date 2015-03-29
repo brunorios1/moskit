@@ -48,7 +48,7 @@ $button--action-negative__padding--v: null !default;
 $button--action-negative__padding--h: null !default;
 $button--action-negative__bg-color: #ef5350 !default;
 $button--action-negative__bg-color--hover: #f44336 !default;
-$button--action-negative__bg-color--active: #e53935 !default;
+$button--action-negative__bg-color--active: #d32f2f !default;
 $button--action-negative__color: #fff !default;
 $button--action-negative__color--hover: $button--action-negative__color !default;
 $button--action-negative__color--active: $button--action-negative__color !default;
@@ -73,7 +73,7 @@ $button--action-warning__border-style: null !default;
 $button--action-warning__border-color: $button--action-warning__bg-color--hover !default;
 
 // Roundness
-$button-roundness: 4px !default;
+$button--roundness__radius: 4px !default;
 
 // Presentational Classes
 $button-classes: true !default;

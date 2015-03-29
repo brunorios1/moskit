@@ -92,7 +92,7 @@ $opacity--disabled: $button__opacity--disabled) {
   )
 }
 
-@mixin button--roundness($roundness: $button-roundness) {
+@mixin button--roundness($roundness: $button--roundness__radius) {
   @if($roundness == round) {
     border-radius: 1000px;
   } @else {
