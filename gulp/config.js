@@ -20,6 +20,10 @@ module.exports = {
     src: paths.styles
   },
 
+  html5lint: {
+    src: paths.html
+  },
+
   sass: {
     dev: {
       src: paths.styles,

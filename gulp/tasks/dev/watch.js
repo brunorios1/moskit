@@ -7,5 +7,5 @@ var config = require('../../config').watch;
 gulp.task('watch', ['browser-sync'], function() {
   gulp.watch(config.styles, ['scsslint', 'sass']);
   gulp.watch(config.scripts, ['eslint', reload]);
-  gulp.watch(config.html, reload);
+  gulp.watch(config.html, ['html5-lint', reload]);
 });

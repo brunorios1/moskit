@@ -21,6 +21,7 @@
     "gulp": "^3.8.11",
     "gulp-cached": "^1.0.4",
     "gulp-eslint": "^0.7.0",
+    "gulp-html5-lint": "^1.0.1",
     "gulp-if": "^1.2.5",
     "gulp-minify-html": "^1.0.1",
     "gulp-pleeease": "^1.2.0",
