@@ -100,11 +100,8 @@ $opacity--disabled: $button__opacity--disabled) {
   }
 }
 
-@mixin button--width($width: $button-width) {
-  @if($width == auto) {
-    width: auto;
-
-  } @elseif($width == half) {
+@mixin button--width($width: auto) {
+  @if($width == half) {
     width: 50%;
 
   } @elseif($width == full) {

@@ -30,19 +30,19 @@
       margin-right: 0;
       margin-bottom: 10px;
       margin-left: 0;
-      background: $grey--100;
+      background: #f5f5f5;
       line-height: 3em;
 
       .l-grid__col {
         font-size: rem(12);
       }
 
-      .l-grid__col:nth-of-type(even) {
-        background: $grey--300;
+      .l-grid__col:nth-of-type(odd) {
+        background: #eee;
       }
 
-      .l-grid__col:nth-of-type(odd) {
-        background: $grey--200;
+      .l-grid__col:nth-of-type(even) {
+        background: #e0e0e0;
       }
     }
   }
