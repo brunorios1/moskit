@@ -1,0 +1,45 @@
+// Core / Modules / Forms / Style
+
+@if($form-classes == true) {
+  .form__label--inline {
+    display: inline-block;
+    line-height: 2em;
+  }
+
+  .form__input--type-text,
+  .form__input--type-email,
+  .form__input--type-password {
+    min-height: 2em;
+    padding-right: .5em;
+    padding-left: .5em;
+    border: 1px solid #ccc;
+  }
+
+  .l-form {
+    &--inline {
+      //
+    }
+
+    &--stacked {
+      .form__label,
+      .form__input,
+      .form__select,
+      .form__textarea,
+      .form__button {
+        display: block;
+      }
+
+      .form__input--type-checkbox,
+      .form__input--type-radio {
+        display: inline-block;
+      }
+    }
+
+    &--aligned {
+      .form__label--inline {
+        display: block;
+        text-align: right;
+      }
+    }
+  }
+}

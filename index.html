@@ -175,15 +175,71 @@
         <a href="#button" class="button button--size-xxxlarge">XXXLarge</a>
 
         <h3>Widths</h3>
-        <p>
-          <a href="#button" class="button">Default</a>
-        </p>
-        <p>
+        <a href="#button" class="button">Default</a>
         <a href="#button" class="button button--width-half">Half</a>
-        </p>
-        <p>
         <a href="#button" class="button button--width-full">Full</a>
-        </p>
+
+        <h2>Forms</h2>
+
+        <h3>Inline</h3>
+        <form class="l-form l-form--inline">
+          <label class="form__label form__label--inline">Email address</label>
+          <input type="email" placeholder="Enter email" class="form__input form__input--type-email">
+
+          <label class="form__label form__label--inline">Password</label>
+          <input type="password" placeholder="Password" class="form__input form__input--type-password">
+
+          <label class="form__label">
+            <input type="checkbox" class="form__input form__input--type-checkbox">Check me out
+          </label>
+          <button type="submit" class="form__button form__button--type-submit button">Submit</button>
+        </form>
+
+        <h3>Stacked</h3>
+        <form class="l-form l-form--stacked">
+          <label class="form__label">Email address</label>
+          <input type="email" placeholder="Enter email" class="form__input form__input--type-email">
+
+          <label class="form__label">Password</label>
+          <input type="password" placeholder="Password" class="form__input form__input--type-password">
+
+          <label class="form__label">
+            <input type="checkbox" class="form__input form__input--type-checkbox">Check me out
+          </label>
+          <button type="submit" class="form__button form__button--type-submit button">Submit</button>
+        </form>
+
+        <h3>Aligned</h3>
+        <form class="l-form l-form--aligned">
+        <div class="l-grid__row">
+          <div class="l-grid__col l-grid__col-2">
+            <label class="form__label form__label--inline">Email address</label>
+          </div>
+          <div class="l-grid__col l-grid__col-10">
+            <input type="email" placeholder="Enter email" class="form__input form__input--type-email">
+          </div>
+        </div>
+        <div class="l-grid__row">
+          <div class="l-grid__col l-grid__col-2">
+            <label class="form__label form__label--inline">Password</label>
+          </div>
+          <div class="l-grid__col l-grid__col-10">
+            <input type="password" placeholder="Password" class="form__input form__input--type-password">
+          </div>
+        </div>
+        <div class="l-grid__row">
+          <div class="l-grid__col l-grid__col-10 l-grid__col--push-2">
+            <label class="form__label">
+              <input type="checkbox" class="form__input form__input--type-checkbox">Check me out
+            </label>
+          </div>
+        </div>
+        <div class="l-grid__row">
+          <div class="l-grid__col l-grid__col-10 l-grid__col--push-2">
+            <button type="submit" class="form__button form__button--type-submit button">Submit</button>
+          </div>
+        </div>
+        </form>
       </div>
     </main>
 
