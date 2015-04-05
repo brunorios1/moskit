@@ -5,7 +5,7 @@ var config = require('../../config').html5lint;
 
 // Dev - html5-lint
 gulp.task('html5-lint', function() {
-  gulp.src(config.src)
+  return gulp.src(config.src)
     // cache
     .pipe(cache('html5-lint'))
     // lint

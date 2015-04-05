@@ -5,7 +5,7 @@ var config = require('../../config').scsslint;
 
 // Sass
 gulp.task('scsslint', function() {
-  gulp.src(config.src)
+  return gulp.src(config.src)
     .pipe(cache('scsslint'))
     // lint scss code
     .pipe(scsslint({
